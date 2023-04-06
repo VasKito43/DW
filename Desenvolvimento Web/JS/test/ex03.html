@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            background: rgb(50, 50, 50);
+            color: aliceblue;
+            font: normal 14pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>doooooooooooooooooom</h1>
+    <p>resultado</p>
+    <p>ddoomm</p>
+    <div id="msg">clique</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0]
+        p1.style.color = 'blue'
+        window.document.write(p1.innerHTML)
+        window.alert(p1.innerHTML)//pega todas as caracteres
+        window.alert(p1.innerText)//pega somente o texto
+        var d = window.document.getElementById("msg")
+        d.style.background = 'green'
+        d.innerText = 'estou agadando...'
+        //window.document.getElementById('msg').innerText = 'Ola'
+        //####################################################//
+        var d = window.document.querySelector('div#msg')
+    </script>
+</body>
+</html>

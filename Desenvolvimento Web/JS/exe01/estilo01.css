@@ -1,0 +1,30 @@
+body {
+    background: rgb(27, 98, 230);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+
+}
+
+section {
+    background: white;
+    border-radius: 10px;  /* borda */
+    padding: 15px;  /* altura */
+    width: 500px;  /* lagura */
+    margin: auto;  /* margem no centro*/
+    box-shadow: 5px 5px 10px rgb(37, 37, 37);
+}
+
+div{
+    text-align: center;
+    padding: 10px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}

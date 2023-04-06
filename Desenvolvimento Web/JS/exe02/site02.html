@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+    <link rel="stylesheet" href="site02.css">
+</head>
+<body>
+    <header>
+        <h1>Sua Idade</h1>
+    </header>
+    <section>
+        <div>
+            <p> Ano de Nascimento: 
+                <input type="number" name="num" id="i" min="0">
+            </p>
+            <p> Sexo
+                <input type="radio" name="radsex" id="msc" checked>
+                <label for="msc">Masculino</label>
+                <input type="radio" name="radsex" id="fmi">
+                <label for="fmi">Feminino</label>
+            </p>
+            <p>
+                <input type="button" value="verificar" onclick="verificar()">
+            </p>
+        </div>
+        <div id="res">
+            *preencha os dados acima para ver o resultado*
+        </div>
+
+    </section>
+    <footer>
+        <p>By VasKito</p>
+    </footer>
+    <script src="site02.js"></script>
+    
+</body>
+</html>
