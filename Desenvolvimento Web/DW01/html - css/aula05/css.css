@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(0, 76, 120);
+    color: aliceblue;
+    font: normal 15px Arial;
+    text-align: center;
+    font-family: serif;
+}
+
+h1 {
+    color: rgb(0, 108, 202);}
+h2 {
+    color: black;
+}
+
+p {
+    color: rgb(6, 92, 92);
+    font: normal 10px Arial;
+}
+section {
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px;
+    width: 1000px;
+    margin: auto;
+    box-shadow: 30px 60px 30px rgb(27, 26, 26);
+}
+
+footer {
+    font-style: italic;
+}
+#central{color: yellowgreen;}
+.importante {color: blue;}
