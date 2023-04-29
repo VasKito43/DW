@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesclagem</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        </style>
+</head>
+<body>
+    <h1>mesclagem de celula</h1>
+
+    <h2>mesclagem colunas(colspan)</h2>
+    <p>
+        <table>
+            <tr>
+                <td>A1</td>
+                <td>B1</td>
+                <td>C1</td>
+                <td>D1</td>
+            </tr>
+            <tr>
+                <td>A2</td>
+                <td>B2</td>
+                <td>C2</td>
+                <td>D2</td>
+            </tr>
+        </table>
+    </p>
+    <p>
+        <table>
+            <tr>
+                <td>A1</td>
+                <td colspan="2">B1</td>
+                
+                <td>D1</td>
+            </tr>
+            <tr>
+                <td>A2</td>
+                <td>B2</td>
+                <td>C2</td>
+                <td>D2</td>
+            </tr>
+        </table>
+    </p>
+    <h2>mesclage,m de linha (rowspan)</h2>
+    <p>
+        <table>
+            <tr>
+                <td>A1</td>
+                <td>B1</td>
+                <td>C1</td>
+                <td>D1</td>
+            </tr>
+            <tr>
+                <td>A2</td>
+                <td>B2</td>
+                <td>C2</td>
+                <td>D2</td>
+            </tr>
+        </table>
+    </p>
+    <p>
+        <table>
+            <tr>
+                <td>A1</td>
+                <td rowspan="2">B1</td>
+                <td>C1</td>
+                <td>D1</td>
+            </tr>
+            <tr>
+                <td>A2</td>
+                
+                <td>C2</td>
+                <td>D2</td>
+            </tr>
+        </table>
+    </p>
+    
+</body>
+</html>
