@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(150,3,3);
+    background: linear-gradient(90deg, rgba(150,3,3,1) 0%, rgba(193,0,0,1) 49%, rgba(255,0,0,1) 100%);
+}
+section {
+    background-color: white;
+    width: 1000px;
+    padding: 30px;
+    border-radius: 15px;
+    margin: auto;
+    box-shadow: 5px 10px 5px rgb(27, 26, 26);
+}
+h1 {
+    text-align: center;
+}

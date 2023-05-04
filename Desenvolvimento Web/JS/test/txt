@@ -1,0 +1,157 @@
+1 - Quem controla a Internet?
+ A Internet não tem uma entidade ou organização que a controla. Ela é um sistema global descentralizado de redes de computadores interconectadas, que é gerenciado por uma série de organizações e grupos de interesse.
+
+2 - Para conectar o mundo todo, a Internet conta com diferentes 3 formas de transmissão de dados. Cite quais são elas e suas vantagens e desvantagens
+ Transmissão por fio: cabos de cobre ou fibra óptica, dados em alta velocidade. É confiável, estável e rápida, mas é cara para instalar e é limitada pela distância física. Transmissão sem fio: utiliza tecnologias de rádio e micro-ondas para transmitir dados. É fácil de instalar, mas é menos confiável e suscetível a interferências de sinal e segurança cibernética. Transmissão por satélite: usa satélites transmitindo dados globalmente, alcançando áreas remotas onde outras formas de transmissão podem não estar disponíveis. É capaz de fornecer conectividade global, mas pode ser afetada por condições climáticas e ser mais cara. 
+
+3.1 - O que é o Protocolo de Internet (IP Internet Protocol) e qual sua função?
+Ele é o CPF dos computadores conectados em uma rede e cada dispositivo da rede possui um endereço exclusivo que apresenta uma hierarquia pela sequência de números. Sendo ele o protocolo que endereça a Internet.
+
+3.2 - Qual a função do Serviço de Nomes de Domínio DNS (Domain Name System)
+O DNS converte nomes de domínios em endereços IP usados como endereço. Ele simplifica o processo de acessar sites usando nomes simples, em vez de endereços IP complexos. O DNS funciona por meio de uma hierarquia de servidores que tem informações sobre os nomes de domínios e os endereços IP correspondentes. Ao digitar um domínio no navegador, ele faz uma solicitação para o servidor de nomes e domínios correspondente e retorna o endereço IP.
+
+4 - Qual é o papel do protocolo TCP (Transmission Control Protocol)
+v É responsável pela entrega de dados quando o endereço IP é encontrado. Antes de transmitir os dados, ele realiza uma conexão entre origem e destino, que fica ativa até o início da comunicação. Ele também divide grandes quantidades de dados em pequenos pacotes
+
+5 - Qual é o papel do protocolo HTTP (Hyper Text Transfer Protocol)
+O http possibilita que as pessoas que inserem a URL do seu site na Web possam ver os conteúdos e dados que nele existem
+
+5.1 - A comunicação realizada por meio do HTTP também é conhecida como Cliente-Servidor, em que o cliente envia uma requisição (request) e o servidor gera uma resposta (response). Descreva de forma simples o fluxo de informações entre o cliente e o servidor.
+Quando um cliente faz uma solicitação ao servidor usando o protocolo HTTP, o servidor processa a solicitação e envia uma resposta de volta ao cliente. A solicitação contém informações sobre o recurso solicitado e a resposta contém informações sobre o status da solicitação e o conteúdo do recurso. 
+
+5.2 - Quais são os métodos de requisição no HTTP?
+Get, Post, Put, Delete, Head, Trace, Options e Connect 
+
+5.3 - Dada uma requisição, quais tipos de informações o servidor pode enviar?
+Quando um servidor recebe uma solicitação do cliente, ele pode enviar várias informações de volta na resposta, incluindo um código de status para indicar se a solicitação foi bem sucedida, cabeçalhos com informações adicionais, o conteúdo real do recurso solicitado, redirecionamento em alguns casos e cookies para rastrear informações sobre a sessão ou lembrar informações específicas do usuário.
+
+5.4 - Quais são os tipos de status da resposta enviada pelo servidor?
+O servidor pode enviar diferentes códigos de status na resposta, incluindo 200 OK para indicar que a solicitação foi bem sucedida, 404 Not Found para indicar que o recurso solicitado não foi encontrado, 401 Unauthorized para indicar que o cliente precisa ser autenticado, e 500 Internal Server Error para indicar que o servidor encontrou um erro interno e não pode completar a solicitação.
+
+
+Qual o significado dos termos Front-end, Back-end e Full Stack?
+. Front-end é a parte que o usuário vê e interage em um software ou aplicação web, enquanto o Back-end é a parte responsável pela lógica de negócios, processamento de dados e comunicação com outros sistemas. Já o Full Stack refere-se à habilidade de um profissional em trabalhar tanto no Front-end quanto no Back-end
+Quais linguagens são utilizadas no Front-end?
+HTML, CSS e JavaScript. 
+
+Quais linguagens são utilizadas no Back-end?
+ PHP, Python, Ruby, Java, JavaScript. 
+
+Descreva um exemplo de aplicação (diferente do vídeo) em que o servidor devolve um website ESTÁTICO. Apresente uma representação gráfica do cliente (front-end) e do servidor (back-end) e as tecnologias utilizadas.
+Um exemplo de aplicação em que o servidor devolve um website estático seria um site de portfólio pessoal de um artista. Nesse caso, o site é composto por páginas com informações sobre o artista, suas obras, biografia, contato, etc. Como não há necessidade de interação com o usuário, é possível criar um website estático que é servido diretamente pelo servidor, sem a necessidade de processamento adicional. 
+
+Descreva um exemplo de aplicação (diferente do vídeo) em que o servidor devolve um website DIN MICO. Apresente uma representação gráfica do cliente (front-end) e do servidor (back-end) e as tecnologias utilizadas.
+.Um exemplo de website dinâmico é a rede social, já que geralmente apresenta uma variedade de recursos e funcionalidades que são atualizados constantemente e que necessitam da interação entre usuários. Essas funcionalidades podem incluir compartilhamento de conteúdo, comentários, curtidas, seguidores, grupos, bate-papo e outras formas de comunicação
+
+Qual é o nome do arquivo principal de um site feito em HTML, que será aberto assim que o visitante solicitar a abertura do site?.
+O nome do arquivo principal de um site feito em HTML, que será aberto assim que o visitante solicitar a abertura do site, é index.html.
+
+Se o código de um emoji é U+1F913, como devemos representá-lo em nosso código HTML?
+Para representar o emoji com o código U+1F913 em código HTML, você pode usar a entidade numérica ou a entidade hexadecimal. 
+Em HTML5 podemos criar títulos em quais níveis?
+Em HTML5, os títulos podem ser criados em seis níveis, variando do mais importante ‘h1’ ao menos importante ‘h6’.
+
+Existem comentários de que uma página pode ter somente um título de nível H1. Isso é fato ou lenda? Justifique sua resposta.
+É um fato que uma página HTML5 deve ter apenas um título de nível H1. O H1 deve ser usado para indicar o título principal da página e sua importância é usada pelos mecanismos de pesquisa para entender a estrutura e a relevância da página. Embora seja tecnicamente possível ter mais de um H1 em uma página, isso pode levar a problemas de acessibilidade, confusão de leitores de tela e até mesmo afetar negativamente a otimização de mecanismos de pesquisa. 
+
+O que é SEO (Search Engine Optimization)?
+SEO, ou Search Engine Optimization, é o conjunto de técnicas e práticas que têm como objetivo otimizar um site para melhorar sua posição nos resultados de pesquisa dos mecanismos de busca, como o Google.
+
+Muita gente fica na dúvida sobre o tamanho da imagem 
+a)use sempre a melhor qualidade possível para que seu site fique bonito 
+b)use sempre a pior qualidade possível, pois os sites precisam ser rápidos 
+===c)tente balancear sempre qualidade e tamanho, para que seu site não fique pesado mas não se esqueça da experiência proporcionada ao seu visitante. 
+d)deixe o visitante escolher se quer imagens grandes ou sites rápidos
+
+Qual é o único dos formatos a seguir que possui suporte para imagens com partes transparentes e compactadas? 
+a)JPEG 
+b)BMP 
+c)TIFF 
+===d)PNG 
+
+Quais as principais características dos seguintes formatos de imagem 
+jpg 
+- É um formato de compressão de imagem, o que significa que ele usa algoritmos para reduzir o tamanho do arquivo da imagem, tornando-a mais fácil de ser compartilhada ou armazenada. 
+- Suporta uma grande variedade de cores e é adequado para imagens fotográficas ou complexas. 
+- Permite uma compressão com perdas, o que significa que pode haver uma redução na qualidade da imagem para torná-la menor em tamanho. 
+
+png 
+- É um formato de imagem sem perdas, o que significa que não há perda de qualidade quando a imagem é salva ou comprimida. 
+- Suporta transparência, o que significa que é útil para gráficos com fundos transparentes, como logos ou ícones. 
+- É adequado para imagens com áreas de cores uniformes ou limitadas, como gráficos vetoriais.
+
+gif 
+- É um formato de imagem animada, o que significa que pode ser usado para criar imagens em movimento, como animações simples ou memes animados. 
+- Usa uma paleta de cores limitada, o que significa que é adequado para imagens com áreas de cores uniformes, como gráficos vetoriais ou desenhos animados. 
+- Suporta transparência, como o PNG
+
+
+O que são as licenças Creative Commons, como surgiram e quais são os tipos existentes? 
+
+As licenças Creative Commons são um conjunto de licenças de direitos autorais que permitem que criadores de conteúdo compartilhem seu trabalho com outras pessoas sob certas condições. Existem seis tipos de licenças, cada uma com diferentes condições para o uso do trabalho protegido, desde a atribuição ao criador original até a renúncia total dos direitos autorais e conexos. As licenças Creative Commons simplificaram e padronizaram o processo de compartilhamento de conteúdo protegido.
+
+
+Dentro da tag para inserir a imagem, usamos um parâmetro especial para indicar a localização da imagem a ser carregada. Que parâmetro é esse? 
+===a)src 
+b)source 
+c)photo 
+d)jpg
+
+Para configurar uma imagem como ícone de favoritos de uma página (favicon), usamos a tag _____ dentro da área ________ do seu site. Qual dos itens a seguir, é o único que preenche corretamente as lacunas da frase anterior? 
+a) | 
+b) | 
+c) | <link>| <head>
+d) | 
+
+01.Explique em que cenário é interessante usarmos o atributo rel na tag <a>. Dentre os
+valores aceitos pelo atributo rel, explique o significado dos valores next, prev, author e
+external
+
+O atributo "rel" na tag <a> é usado para definir a relação entre a página atual e a página
+que está sendo vinculada. Os valores aceitos incluem "next" para a próxima página em uma
+série, "prev" para a página anterior em uma série, "author" para a página do autor e
+"external" para indicar que o link leva a uma página fora do site. O uso correto deste atributo
+pode melhorar a experiência do usuário e a classificação do site nos resultados de
+pesquisa.
+
+02.Toda vez que estamos em um site e clicamos em uma área sensível que nos leva a outro
+ponto ou a outro documento, estamos interagindo com um:
+===1. hyperlink
+2. metadado
+3. ancoramento
+4. subdomínio
+
+03.A tag de âncora também suporta o parâmetro target, onde podemos colocar vários
+valores, exceto
+1. _parent
+2. _self
+===3. _external
+4. _top
+
+04.A maneira mais recomendada de indicar um link externo é configurando o seguinte par
+de parâmetro e valor:
+1. external = “true”
+2. href = “external”
+3. target = “_external”
+===4. rel = “external”
+
+05.Ao criar links que levam a documentos que estão em pastas imediatamente superiores
+na hierarquia do site, devemos adicionar ao link os símbolos:
+===1. ../
+2. </
+3. #/
+4. -/
+
+06.Ao criar um link para download, recomenda-se configurar os parâmetros adicionais
+1. link e download
+===2. download e type
+3. link e type
+4. download e link
+
+07.O parâmetro type de um link que vai servir para baixar um arquivo PDF deve estar
+configurado com o valor:
+1. ebook/pdf
+2. file/pdf
+===3. application/pdf
+4. download/pdf
+
