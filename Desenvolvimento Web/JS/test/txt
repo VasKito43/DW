@@ -100,7 +100,7 @@ d)jpg
 Para configurar uma imagem como ícone de favoritos de uma página (favicon), usamos a tag _____ dentro da área ________ do seu site. Qual dos itens a seguir, é o único que preenche corretamente as lacunas da frase anterior? 
 a) | 
 b) | 
-c) | <link>| <head>
+===c) | <link>| <head>
 d) | 
 
 01.Explique em que cenário é interessante usarmos o atributo rel na tag <a>. Dentre os
