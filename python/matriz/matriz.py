@@ -148,6 +148,14 @@ def matriz(n):
     for i in range(p-1, p2, -1):
         l[p2][i] = l[p2][i+1] + n
 
+    for i in range(2, p2):
+        l[i][i] = l[i-1][i-1] + n
+
+    for i in range(p-1, p2, -1):
+        l[i][i] = l[i+1][i+1] - n
+
+    #l[p-1][p-2] = l[p-1][p-1] - 3
+
     mostrar(l)
 
 #matriz_1()
