@@ -90,11 +90,76 @@ def matriz(n):
     l[p2][p] = 3 
     l[p][p2] = 1
     l[p2][p2] = x
-    l[0][1] = sm - y
+    l[0][1] = sm - y - 1
     l[0][p2] = int(n**2)
     l[0][p-1] = y + 2
-    l[0][p] = x + 1 - m
+    #l[0][p] = x + 1 - m
     l[1][1] = l[0][0] + n
+    l[p2][0] = int(n**2 - 2)
+    l[p][0] = y
+    l[p][1] = y + 1
+    l[p][p] = int(n**2 - 1)
+    
+    c = m
+    for i in range(p):
+        c = c - 1
+        l[i][p-i] = x - c
+
+    for i in range(2, p2):
+        l[0][i] = l[0][i-1] - 2
+
+    for i in range(p-2, p2, -1):
+        l[0][i] = l[0][i+1] + 2
+    
+    for i in range(1, p2):
+        l[i][0] = l[i - 1][0] + 2
+        l[i][p2] = l[i-1][p2] - n
+
+    c = n - 3
+    c2 = 0
+    for i in range(p2+1,p):
+        l[i][0] = l[p2][0] - c + c2
+        c2 += 2
+    
+    for i in range(p-1, p2, -1):
+        l[i][p2] = l[i+1][p2] + n
+
+    l[1][p] = sm - l[1][0]
+
+    for i in range(2, p2):
+        l[i][p] = l[i-1][p] - 2
+
+    l[p2+1][p] = sm - l[p2+1][0]
+
+    for i in range(p2+2, p):
+        l[i][p] = l[i-1][p] - 2
+
+    l[p][p2+1] = sm - l[0][p2+1]
+
+    for i in range(p2+2,p):
+        l[p][i] = l[p][i-1] + 2
+
+    for i in range(2, p2):
+        l[p][i] = l[p][i-1] + 2
+
+    for i in range(1, p2):
+        l[p2][i] = l[p2][i-1] - n
+
+    for i in range(p-1, p2, -1):
+        l[p2][i] = l[p2][i+1] + n
+
+    for i in range(2, p2):
+        l[i][i] = l[i-1][i-1] + n
+
+    for i in range(p-1, p2, -1):
+        l[i][i] = l[i+1][i+1] - n
+
+    if n > 5:
+        l[1][p-2] = l[p2][p-1] + 2
+        l[p-1][p-2] = sm - l[1][p-2]
+        l[p-1][2] = l[p2][p-1] + 1
+        l[1][2] = sm - l[p-1][2]
+        
 
     mostrar(l)
 
@@ -103,3 +168,5 @@ def matriz(n):
 matriz(5)
 print()
 matriz(7)
+print()
+matriz(9)
