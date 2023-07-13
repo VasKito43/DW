@@ -46,6 +46,7 @@ def diagonal(v):
     for i in range(n):
         if m[w][i] == v:
             c = True
+        w -= 1
     return c
         
 
@@ -91,7 +92,7 @@ def removedor(v): #remove valor da lista de conferencia
             if l[i][j] == v:
                 l[i][j] = 0
 
-n = 10#int(input('n: '))
+n = 6#int(input('n: '))
 m = criador(n) #matriz
 l = criador2(n) #lista de conferencia
 x = int((n+1)/2) - 1 #localização da metade da matriz
@@ -187,12 +188,29 @@ if n % 2 == 0:
         w -= 1
 
     for l in range(1,x1):
-        mostrar(m)
         m[(l-2*l)-2][(l-2*l)-1] = m[l][l] + 1
 
+    w = 1
+    for l in range(y-1, x2, -1):
+        m[(w-2*w)-2][(l-2*l)-1] = m[w][l] + 1
+        w += 1
         
+    for l in range(1, y):
+        for i in range(y-1, x1+1, -1):
+            if m[i-1][l] == ' ':
+                m[i-1][l] = m[i][l] + 1
 
-
+    for l in range(y, x1, -1):
+        for i in range(1, y):
+            if diagonal(m[l][i]) and m[(l-2*l)][i] == ' ':
+                m[(l-2*l)][i] = m[l][i] - 1
+                
+    for l in range(1, x1):
+        for i in range(1, y):
+            if diagonal(m[l][i]) and m[l+2][i] == ' ':
+                for k in range(l+1, x1):
+                    m[k+1][i] = m[k][i] - 1
+    
 
     mostrar(m)
 else:
