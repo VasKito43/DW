@@ -56,12 +56,14 @@ def verificador(l): #verifica se as colunas e linhas tem o valor de C.M
         somar = 0
         for j in range(len(l)):
             somar += l[j][i]
+        print(somar)
         if somar != cm:
             v = 1
     for i in range(len(l)):
         somar = 0
         for j in range(len(l)):
             somar += l[i][j]
+        print(somar)
         if somar != cm:
             v = 1
 
@@ -92,7 +94,7 @@ def removedor(v): #remove valor da lista de conferencia
             if l[i][j] == v:
                 l[i][j] = 0
 
-n = 6#int(input('n: '))
+n = 12#int(input('n: '))
 m = criador(n) #matriz
 l = criador2(n) #lista de conferencia
 x = int((n+1)/2) - 1 #localização da metade da matriz
@@ -346,4 +348,4 @@ else:
 
 
 
-    verificador(m)
+verificador(m)
