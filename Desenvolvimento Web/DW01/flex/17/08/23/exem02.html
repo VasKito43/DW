@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .container{
+            background-color: gray;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            
+
+            grid-template-areas: 
+                "b1 b1"
+                "b2 b3"
+                "b4 b4";
+
+                grid-template-rows: 15vh 70vh 15vh;
+
+            grid-template-columns: 15vw 85vw;
+            
+        }
+    
+        .box1{
+            background-color: red;
+            /* height: 100px; */
+            grid-area: b1;
+        }
+        .box2{
+            background-color: blue;
+            /* height: 100px; */
+            grid-area: b2;
+        }
+        .box3{
+            background-color: green;
+            /* height: 100px; */
+            grid-area: b3;
+        }
+        .box4{
+            background-color: yellow;
+            /* height: 100px; */
+            grid-area: b4;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </div>
+    
+</body>
+</html>
