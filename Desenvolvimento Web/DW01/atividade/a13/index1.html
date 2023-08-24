@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container1{
+            color: white;
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+        }
+        .logo{
+            flex-grow: 2;
+            font-size: 20pt;
+            margin: 15px;
+        }
+        .item{
+            width: 150px;
+        }
+        .container2{
+            display: grid;
+            margin: 10px;
+            grid-template-areas: 
+                "b1 b2 b3"
+                "b4 b5 b6";
+            grid-template-rows: 300px;
+            grid-gap: 50px;
+            place-items: center;
+
+        }
+        .box{
+            background-color: gray;
+            width: 400px;
+            height: 250px;
+        }
+        .texto{
+            font-size: 15pt;
+            text-align: center;
+        }
+        .borda:hover, .item:hover{
+            border: 5px solid rgb(155, 5, 155);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <div class="logo">Logo</div>
+        <div class="item">Sobre</div>
+        <div class="item">Produtos</div>
+        <div class="item">Contato</div>
+    </div>
+    <div class="container2">
+        <div class="borda">
+            <div class="box"></div>
+            <div class="texto">Bicicleta</div>
+        </div>
+        <div class="borda">
+            <div class="box"></div>
+            <div class="texto">Carros</div>
+        </div>
+        <div class="borda">
+            <div class="box"></div>
+            <div class="texto">Barcos</div>
+        </div>
+        <div class="borda">
+            <div class="box"></div>
+            <div class="texto">Calça</div>
+        </div>
+        <div class="borda">
+            <div class="box"></div>
+            <div class="texto">Bermudas</div>
+        </div>
+        <div class="borda">
+            <div class="box"></div>
+            <div class="texto">Camisas</div>
+        </div>
+    </div>
+    
+</body>
+</html>

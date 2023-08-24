@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container1{
+            color: white;
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+        }
+        .logo{
+            flex-grow: 2;
+            font-size: 20pt;
+            margin: 15px;
+        }
+        .item{
+            width: 150px;
+        }
+        .container2{
+            display: grid;
+            margin: 10px;
+            grid-template-areas: 
+                "b1 b2 "
+                "b1 b3 ";
+            grid-template-rows: 300px 200px;
+            grid-template-columns: 60vw 10vw;
+            grid-gap: 30px;
+            place-items: center;
+
+        }
+        .box1{
+            background-color: gray;
+            width: 400px;
+            height: 500px;
+        
+        }
+        .b1{
+            grid-area: b1;
+            padding-top: 55px;
+        }
+        .box{
+            background-color: gray;
+            width: 400px;
+            height: 220px;
+        }
+        .texto{
+            font-size: 15pt;
+            background-color: black;
+            color: white;
+            text-align: center;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .borda:hover, .item:hover{
+            border: 5px solid rgb(155, 5, 155);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <div class="logo">Logo</div>
+        <div class="item">Sobre</div>
+        <div class="item">Produtos</div>
+        <div class="item">Contato</div>
+    </div>
+    <div class="container2">
+        <div class="borda b1">
+            <div class="box1"></div>
+            <div class="texto">Legenda Imagem</div>
+        </div>
+        <div class="borda box2">
+            <div class="box"></div>
+            <div class="texto">Legenda Imagem</div>
+        </div>
+        <div class="borda box2">
+            <div class="box"></div>
+            <div class="texto">Legenda Imagem</div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
