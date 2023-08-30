@@ -94,7 +94,7 @@ def removedor(v): #remove valor da lista de conferencia
             if l[i][j] == v:
                 l[i][j] = 0
 
-n = 12#int(input('n: '))
+n = 14#int(input('n: '))
 m = criador(n) #matriz
 l = criador2(n) #lista de conferencia
 x = int((n+1)/2) - 1 #localização da metade da matriz
@@ -135,15 +135,19 @@ if n % 2 == 0:
         m[i+1][y] = m[i][y] + 1
         m[i+1][0] = m[i][0] + 1
 
+
     #linha 1
 
     m[0][1] = m[0][y] - 1
 
-    for i in range(1, x2+1):
+
+    for i in range(1, x2):
         m[0][i+1] = m[0][i] - n
+
 
     for i in range(y-1, x2+1, -1):
         m[0][i-1] = m[0][i] + n
+
 
     #ultima linha 
 
@@ -168,6 +172,7 @@ if n % 2 == 0:
     for i in range(1, x1-1):
         m[i+1][x1] = m[i][x1]-1
         m[i+1][x2] = m[i][x2]-1
+
 
     #preenchimento
     w = y - 1
