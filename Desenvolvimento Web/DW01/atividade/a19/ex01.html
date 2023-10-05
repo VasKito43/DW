@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>tabuada</h1>
+    <input type="number" name="numero" id="num">
+    <input type="button" value="tabuada" onclick="tabuada()">
+    <div id="res"></div>
+    <br>
+    <script>
+        function tabuada() {
+
+            var n1 = 1
+            var t2 = window.document.getElementById("num")
+            
+            var n2 = Number.parseInt(t2.value)
+            var res = window.document.getElementById("res")
+            var s = n1*n2
+            while (n1<11){
+                res.innerHTML += n1 + "+" + n2 + "=" + s + '<br>'
+                
+                n1 = n1+1
+            }
+        }
+
+    </script>
+</body>
+</html>
