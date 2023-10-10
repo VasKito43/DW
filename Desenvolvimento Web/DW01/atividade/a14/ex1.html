@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nome{width: 300px;}
+        #email{width: 200px;}
+        #senha{width: 200px;}
+        #select{
+     
+            width: 400px;
+            height: 100px;
+            margin: 4px 2px;
+        }
+
+        #quadrado{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #ccc;
+            border-radius: 3px; 
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="" method="get">
+
+        <label for="nome"><strong>Nome:</strong></label>
+        <input type="text" id="nome" name="name"><br>
+        <br>
+        <label for="email"><strong>Email:</strong></label>
+        <input type="email" id="email" ><br>
+        <br>
+        <label for="senha"><strong>Senha:</strong></label>
+        <input type="password" id="senha" ><br>
+        <br>
+        
+        <form action="" method="get">
+            <P><strong>Tipo de Cadastro:</strong></P>
+            
+            <label for="aluno">Aluno:</label>
+            <input type="radio" id="aluno">
+            <label for="servidor">Servidor:</label>
+            <input type="radio" id="servidor">
+            <label for="visitante">Visitante:</label>
+            <input type="radio" id="visitante"><br>
+        </form>        
+        <br>
+
+        <p><strong>Campus da UTFPR:</strong></p>
+        <select name="select" id="campus">
+
+            <option value="valor1" selected>Campo Mourão</option>
+            <option value="valor2">Apucarana</option>
+            <option value="valor3">Cornélio Procópio</option>
+            <option value="valor3">Curitiba</option>
+        </select>
+        <br>
+        <form action="" method="get">
+            <P><strong>Disciplinas que cursa atualmente:</strong></P>
+            
+            <input type="radio" id="quadrado">
+            <label for="quadrado">Desenvolvimento Web I</label><br>
+            <input type="radio" id="quadrado">
+            <label for="quadrado">Linguagem de Programação II</label><br>
+            <input type="radio" id="quadrado">
+            <label for="quadrado">Banco de Dados</label><br>
+            <input type="radio" id="quadrado">
+            <label for="quadrado">Redes de Computadores I</label><br>
+        </form> 
+
+        <br>
+        <p><strong>Quais são seus primeiros hobbies?</strong></p>
+        <label for="select"></label>
+        <input type="text" id="select" placeholder="Digite aqui...">
+
+    </form>
+</body>
+</html>
