@@ -1,223 +1,278 @@
 import time
 
-def centro(n):
-    n = (n**2 + 1)/2
-    return int(n)
-
-def somar_termos(a):
-    s = 0
-    for i in a:
-        for j in i:
-            s += j
-    return s
-
-def verificacao(l,n):
-    cm = c_m(n)
-    for i in range (len(l)):
-        soma = 0
-        for j in range (len(l)):
-            soma += l[i][j]
-        if soma != cm:
-            print('!!falha!!')
-    for i in range (len(l)):
-        soma = 0
-        for j in range (len(l)):
-            soma += l[j][i]
-        if soma != cm:
-            print('!!falha!!')
-
-def mostrar(l):
-    time.sleep(0.43)
-    for i in range(len(l)):
-        print(l[i])
-    print()
-
-
-def s_t(n):
-    s = ((n**2 + 1)/2) * (n**2)
-    return int(s)
-
-def c_m(n):
-    c = ((n**2 + 1)/2) * n
-    return int(c)
-
-def s_m(n):
-    s = n**2 + 1
-    return int(s)
-
-def matriz_1():
-    l = [[1]]
-    st = somar_termos(l)
-    if st == s_t(1) and c_m(1) == 1:
-        print (l)
-
-def matriz_3():
-    l = [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0]
-    ]
-    sm = s_m(3)
-    l[0][0] = 2 #a11
-    mostrar(l)
-    l[1][2] = 3 #a23
-    mostrar(l)
-    l[2][1] = 1 #a32
-    mostrar(l)
-    l[1][1] = centro(3) #a22
-    mostrar(l)
-    l[0][1] = c_m(3) - (l[1][1] + l[2][1]) #a12
-    mostrar(l)
-    l[0][2] = c_m(3) - (l[0][0] + l[0][1]) #a13
-    mostrar(l)
-    l[2][2] = c_m(3) - (l[0][2] + l[1][2]) #a33
-    mostrar(l)
-    l[2][0] = c_m(3) - (l[2][1] + l[2][2]) #a31
-    mostrar(l)
-    l[1][0] = c_m(3) - (l[2][0] + l[0][0]) #a21
-
-    verificacao(l, 3)
-
-    print (l[0])
-    print (l[1])
-    print (l[2])
-
-def matriz(n):
+def criador(n): #criador da matriz
     l=[]
 
     for i in range(n):
         k=[] 
         for j in range(n):
-            k.append('')
+            k.append(' ')
         l.append(k)
 
-    m = int((n+1)/2)
-    y = int(((n**2+1)/2) + ((n - 1)/2))
-    x = int((n**2+1)/2)
-    p = n - 1
-    p2 = m - 1
-    sm = s_m(n)
+    return l
 
-    l[0][0] = 2 
-    mostrar(l)
-    l[p2][p] = 3 
-    mostrar(l)
-    l[p][p2] = 1
-    mostrar(l)
-    l[p2][p2] = x
-    mostrar(l)
-    l[0][1] = sm - y - 1
-    mostrar(l)
-    l[0][p2] = int(n**2)
-    mostrar(l)
-    l[0][p-1] = y + 2
-    mostrar(l)
-    l[1][1] = l[0][0] + n
-    mostrar(l)
-    l[p2][0] = int(n**2 - 2)
-    mostrar(l)
-    l[p][0] = y
-    mostrar(l)
-    l[p][1] = y + 1
-    mostrar(l)
-    l[p][p] = int(n**2 - 1)
-    mostrar(l)
-    
-    c = m
-    for i in range(p):
-        c = c - 1
-        l[i][p-i] = x - c
-        mostrar(l)
+def criador2(n): #criador da lista de conferencia
+    m = [];
+    x = [];
+    for i in range(1, n**2+1):
+        m.append(i)
+        if i % n == 0:
+            x.append(m)
+            m = []
+    return x
 
-    for i in range(2, p2):
-        l[0][i] = l[0][i-1] - 2
-        mostrar(l)
+def criador3(n):
+    m = [1]
+    x = []
+    for i in range(n-1):
+        m.append(m[i]+n)
+    x.append(m)
+    z = m[:]
+    for i in range(n-1):
+        m = z[:]
+        z = m[:]
+        for f in range(n):
+            z[f] += 1
+        x.append(z)
+    return x
 
-    for i in range(p-2, p2, -1):
-        l[0][i] = l[0][i+1] + 2
-        mostrar(l)
-    
-    for i in range(1, p2):
-        l[i][0] = l[i - 1][0] + 2
-        l[i][p2] = l[i-1][p2] - n
-        mostrar(l)
 
-    c = n - 3
-    c2 = 0
-    for i in range(p2+1,p):
-        l[i][0] = l[p2][0] - c + c2
-        c2 += 2
-        mostrar(l)
-    
-    for i in range(p-1, p2, -1):
-        l[i][p2] = l[i+1][p2] + n
-        mostrar(l)
 
-    l[1][p] = sm - l[1][0]
-    mostrar(l)
+def contador(l): #soma todos os elemntos da lista
+    soma = 0
+    for i in range(len(l)):
+        for j in range(len(l)):
+            soma += l[i][j]
+    return soma
 
-    for i in range(2, p2):
-        l[i][p] = l[i-1][p] - 2
-        mostrar(l)
+def menor(l): #acha o menor valor da lista
+    menor = 999999999999999999*9999
+    for i in range(len(l)):
+        for j in range(len(l)):
+            if menor > l[i][j] and l[i][j] != 0:
+                menor = l[i][j]
+    return menor
 
-    l[p2+1][p] = sm - l[p2+1][0]
-    mostrar(l)
-
-    for i in range(p2+2, p):
-        l[i][p] = l[i-1][p] - 2
-        mostrar(l)
-
-    l[p][p2+1] = sm - l[0][p2+1]
-    mostrar(l)
-
-    for i in range(p2+2,p):
-        l[p][i] = l[p][i-1] + 2
-        mostrar(l)
-
-    for i in range(2, p2):
-        l[p][i] = l[p][i-1] + 2
-        mostrar(l)
-
-    for i in range(1, p2):
-        l[p2][i] = l[p2][i-1] - n
-        mostrar(l)
-
-    for i in range(p-1, p2, -1):
-        l[p2][i] = l[p2][i+1] + n
-        mostrar(l)
-
-    for i in range(2, p2):
-        l[i][i] = l[i-1][i-1] + n
-        mostrar(l)
-
-    for i in range(p-1, p2, -1):
-        l[i][i] = l[i+1][i+1] - n
-        mostrar(l)
-
-    if n > 5:
-        l[1][p-2] = l[p2][p-1] + 2
-        mostrar(l)
-        l[p-1][p-2] = sm - l[1][p-2]
-        mostrar(l)
-        l[p-1][2] = l[p2][p-1] + 1
-        mostrar(l)
-        l[1][2] = sm - l[p-1][2]
-        mostrar(l)
+def diagonal(v):
+    c = False
+    global n, m
+    for i in range(n):
+        if m[i][i] == v:
+            c = True
+    w = y
+    for i in range(n):
+        if m[w][i] == v:
+            c = True
+        w -= 1
+    return c
         
 
-    mostrar(l)
+def verificador(l): #verifica se as colunas e linhas tem o valor de C.M
+    v = 0
+    for i in range(len(l)):
+        somar = 0
+        for j in range(len(l)):
+            somar += l[j][i]
+        print(somar)
+        if somar != cm:
+            v = 1
+    for i in range(len(l)):
+        somar = 0
+        for j in range(len(l)):
+            somar += l[i][j]
+        print(somar)
+        if somar != cm:
+            v = 1
 
-#matriz_1()
-#matriz_3()
-#matriz(5)
-print()
-#matriz(7)
-print()
-#matriz(9)
-n = int(input('n: '))
-if n == 1:
-    matriz_1()
-elif n == 3:
-    matriz_3()
+    somar = 0
+    for i in range(len(l)):
+        for j in range(len(l)):
+            somar += l[j][i]
+            
+    if somar != st:
+        v = 1
+
+    if v == 1:
+        print('!!ERRO!!')
+    else:
+        print('Matriz Perfeita')
+
+    
+def mostrar(l): #visualizaçao da matriz
+    time.sleep(0.45)
+    for i in range(len(l)):
+        print(l[i])
+    print()
+
+def removedor(v): #remove valor da lista de conferencia
+    global l
+    for i in range(len(l)):
+        for j in range(len(l)):
+            if l[i][j] == v:
+                l[i][j] = 0
+
+n = 8
+#int(input('n: '))
+m = criador(n) #matriz
+l = criador2(n) #lista de conferencia
+x = int((n+1)/2) - 1 #localização da metade da matriz
+y = n-1 # localização de 'n' na lista
+sm = int(n**2 + 1) #S.M
+cm = int(((n**2 + 1)/2)*n) #C.M
+st = int(((n**2+1)/2)*(n**2)) #S.T
+
+if n % 2 == 0:
+
+    l = criador3(n)
+    if n % 4 == 0:
+
+        m[0][0] = 1
+        m[y][0] = n
+
+        w = y
+        for i in range(y):
+            m[i+1][i+1] = m[i][i] + n + 1
+            m[w-1][i+1] = m[w][i] + n - 1
+            w -= 1
+
+        for i in range(1, y):
+            if (l[i][0] % 2 == 0 and i <= x) or (l[i][0] % 2 != 0 and i > x):
+                m[y-i][y] = l[i][0]
+            elif (l[i][0] % 2 != 0 and i <= x) or (l[i][0] % 2 == 0 and i > x): 
+                m[i][0] = l[i][0]
+
+    mostrar(m)
 else:
-    matriz(n)
+    z = int((n**2 + 1)/2) 
+
+    #valores fixos
+
+    m[0][0] = 2
+    mostrar (m)
+    m[x][x] = z
+    mostrar (m)
+    m[x][y] = 3
+    mostrar (m)
+    m[y][x] = 1
+    mostrar (m)
+    m[0][x] = sm - 1
+    mostrar (m)
+    m[y][y] = sm - 2
+    mostrar (m)
+    m[x][0] = sm - 3
+    mostrar (m)
+
+    removedor(m[0][0])
+    removedor(m[x][x])
+    removedor(m[x][y])
+    removedor(m[y][x])
+    removedor(m[0][x])
+    removedor(m[y][y])
+    removedor(m[x][0])
+
+
+    c = int((n+1)/2)
+    p = n - 1
+    for i in range(n): #primeira diagonal
+        c = c - 1
+        m[i][p-i] = z - c
+        mostrar (m)
+        removedor(m[i][p-i])
+
+    for i in range(x-1): #segunda diagonal
+        m[i+1][i+1] = m[i][i] + n
+        mostrar (m)
+        removedor(m[i+1][i+1])
+
+    for i in range(y, x+1, -1): #segunda diagonal
+        m[i-1][i-1] = m[i][i] - n
+        mostrar (m)
+        removedor(m[i-1][i-1])
+
+    for i in range(x-1): #coluna central
+        m[i+1][x] = m[i][x] - n
+        mostrar (m)
+        removedor(m[i+1][x])
+
+    for i in range(y, x+1, -1): #coluna central
+        m[i-1][x] = m[i][x] + n
+        mostrar (m)
+        removedor(m[i-1][x])
+
+    for i in range(x-1): #linha central
+        m[x][i+1] = m[x][i] - n
+        mostrar (m)
+        removedor(m[x][i+1])
+
+    for i in range(y, x+1, -1): #linha central
+        m[x][i-1] = m[x][i] + n
+        mostrar (m)
+        removedor(m[x][i-1])
+
+    #ordem crescente    
+    w=0
+    l1 = y
+    l2 = 0
+    while contador(l) > 0:
+
+        while True:
+            a = 0
+
+            for j in range(x):
+                if m[l1][j] == ' ':
+                    m[l1][j] = menor(l)
+                    mostrar (m)
+                    m[l2][j] = sm - m[l1][j]
+                    mostrar (m)
+                    removedor(m[l1][j])
+                    removedor(m[l2][j])
+                    break
+
+            for j in range(y, x, -1):
+                if m[l2][j] == ' ':
+                    m[l2][j] = menor(l)
+                    mostrar (m)
+                    m[l1][j] = sm - m[l2][j]
+                    mostrar (m)
+                    removedor(m[l2][j])
+                    removedor(m[l1][j])
+                    a += 1
+                    break
+
+            if a == 0:
+                break
+            
+        while True:
+            a = 0
+
+            for j in range(x):
+                if m[j][l2] == ' ':
+                    m[j][l2] = menor(l)
+                    mostrar (m)
+                    m[j][l1] = sm - m[j][l2]
+                    mostrar (m)
+                    removedor(m[j][l2])
+                    removedor(m[j][l1])
+                    break
+
+            for j in range(y, x, -1):
+                if m[j][l1] == ' ':
+                    m[j][l1] = menor(l)
+                    mostrar (m)
+                    m[j][l2] = sm - m[j][l1]
+                    mostrar (m)
+                    removedor(m[j][l1])
+                    removedor(m[j][l2])
+                    a += 1
+                    break
+
+            if a == 0:
+                break
+            
+            
+        l1 -= 1 
+        l2 += 1
+
+
+
+#verificador(m)

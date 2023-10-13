@@ -94,7 +94,8 @@ def removedor(v): #remove valor da lista de conferencia
             if l[i][j] == v:
                 l[i][j] = 0
 
-n = 14#int(input('n: '))
+n = 5
+#int(input('n: '))
 m = criador(n) #matriz
 l = criador2(n) #lista de conferencia
 x = int((n+1)/2) - 1 #localização da metade da matriz
