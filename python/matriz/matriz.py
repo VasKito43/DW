@@ -11,17 +11,9 @@ def criador(n): #criador da matriz
 
     return l
 
-def criador2(n): #criador da lista de conferencia
-    m = [];
-    x = [];
-    for i in range(1, n**2+1):
-        m.append(i)
-        if i % n == 0:
-            x.append(m)
-            m = []
-    return x
 
-def criador3(n):
+
+def criador2(n):
     m = [1]
     x = []
     for i in range(n-1):
@@ -122,24 +114,51 @@ cm = int(((n**2 + 1)/2)*n) #C.M
 st = int(((n**2+1)/2)*(n**2)) #S.T
 
 if n % 2 == 0:
+    
+    m[0][0] = 1
+    mostrar (m)
+    m[y][0] = n
+    mostrar (m)
+    w = y
 
-    l = criador3(n)
+    for i in range(y):
+        m[i+1][i+1] = m[i][i] + n + 1
+        mostrar (m)
+        m[w-1][i+1] = m[w][i] + n - 1
+        mostrar (m)
+        w -= 1
+
+
+    
     if n % 4 == 0:
 
-        m[0][0] = 1
-        m[y][0] = n
 
-        w = y
-        for i in range(y):
-            m[i+1][i+1] = m[i][i] + n + 1
-            m[w-1][i+1] = m[w][i] + n - 1
-            w -= 1
+        for f in range(x+1):
+            if f % 2 == 0:
+                for i in range(0, y+1):
+                    if not diagonal(l[i][f]):
+                        if (l[i][f] % 2 == 0 and i <= x) or (l[i][f] % 2 != 0 and i > x):
+                            m[y-i][y-f] = l[i][f]
+                        elif (l[i][f] % 2 != 0 and i <= x) or (l[i][f] % 2 == 0 and i > x): 
+                            m[i][f] = l[i][f]
+                        if (l[i][y-f] % 2 == 0 and i <= x) or (l[i][y-f] % 2 != 0 and i > x):
+                            m[y-i][f] = l[i][y-f]
+                        elif (l[i][y-f] % 2 != 0 and i <= x) or (l[i][y-f] % 2 == 0 and i > x): 
+                            m[i][y-f] = l[i][y-f]
+                        mostrar (m)
 
-        for i in range(1, y):
-            if (l[i][0] % 2 == 0 and i <= x) or (l[i][0] % 2 != 0 and i > x):
-                m[y-i][y] = l[i][0]
-            elif (l[i][0] % 2 != 0 and i <= x) or (l[i][0] % 2 == 0 and i > x): 
-                m[i][0] = l[i][0]
+            else:
+                for i in range(0, y+1):
+                    if not diagonal(l[i][f]):
+                        if (l[i][f] % 2 != 0 and i <= x) or (l[i][f] % 2 == 0 and i > x):
+                            m[y-i][y-f] = l[i][f]
+                        elif (l[i][f] % 2 == 0 and i <= x) or (l[i][f] % 2 != 0 and i > x): 
+                            m[i][f] = l[i][f]
+                        if (l[i][y-f] % 2 != 0 and i <= x) or (l[i][y-f] % 2 == 0 and i > x):
+                            m[y-i][f] = l[i][y-f]
+                        elif (l[i][y-f] % 2 == 0 and i <= x) or (l[i][y-f] % 2 != 0 and i > x): 
+                            m[i][y-f] = l[i][y-f]
+                        mostrar (m)
 
     mostrar(m)
 else:
@@ -275,4 +294,4 @@ else:
 
 
 
-#verificador(m)
+verificador(m)
