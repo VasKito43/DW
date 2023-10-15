@@ -103,7 +103,7 @@ def removedor(v): #remove valor da lista de conferencia
             if l[i][j] == v:
                 l[i][j] = 0
 
-n = 8
+n = 10
 #int(input('n: '))
 m = criador(n) #matriz
 l = criador2(n) #lista de conferencia
@@ -116,16 +116,16 @@ st = int(((n**2+1)/2)*(n**2)) #S.T
 if n % 2 == 0:
     
     m[0][0] = 1
-    mostrar (m)
+    # mostrar (m)
     m[y][0] = n
-    mostrar (m)
+    # mostrar (m)
     w = y
 
     for i in range(y):
         m[i+1][i+1] = m[i][i] + n + 1
-        mostrar (m)
+        # mostrar (m)
         m[w-1][i+1] = m[w][i] + n - 1
-        mostrar (m)
+        # mostra+r (m)
         w -= 1
 
 
@@ -159,6 +159,58 @@ if n % 2 == 0:
                         elif (l[i][y-f] % 2 == 0 and i <= x) or (l[i][y-f] % 2 != 0 and i > x): 
                             m[i][y-f] = l[i][y-f]
                         mostrar (m)
+
+    else:
+        m[x][y] = l[x][0]
+        m[x+1][y] = l[x+1][0]
+
+        m[x][0] = sm - m[x][y]
+        m[x+1][0] = sm - m[x+1][y]
+
+        m[y][x] = l[0][x]
+        m[y][x+1] = l[0][x+1]
+        m[0][x] = sm - m[y][x]
+        m[0][x+1] = sm - m[y][x+1]
+
+        for i in range(1,x):
+            if i % 2 == 0:
+                m[x][y-i] = l[x][i]
+                m[x+1][y-i] = l[x+1][i]
+                m[x+1][i] = sm - m[x][y-i]
+                m[x][i] = sm - m[x+1][y-i]
+
+                m[y-i][x] = l[i][x]
+                m[y-i][x+1] = l[i][x+1]
+                m[i][x+1] = sm - m[y-i][x]
+                m[i][x] = sm - m[y-i][x+1]
+            else:
+                m[x+1][i] = l[x][y-i]
+                m[x+1][y-i] = l[x][i]
+                m[x][i] = sm - m[x+1][i]
+                m[x][y-i] = sm - m[x+1][y-i]
+
+                m[y-i][x] = l[y-i][x+1]
+                m[y-i][x+1] = sm - m[y-i][x]
+                m[i][x+1] = l[y-i][x]
+                m[i][x] = sm - m[i][x+1]
+
+        
+
+        
+        
+                
+
+
+
+
+
+        # for i in range(x):
+        #     for f in range(x):
+        #         if not diagonal(l[i][f]):
+        #             print(123)
+        #             m[y-i][y-f] = l[i][f]
+
+                        
 
     mostrar(m)
 else:
@@ -294,4 +346,4 @@ else:
 
 
 
-verificador(m)
+# verificador(m)
