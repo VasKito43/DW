@@ -1,6 +1,7 @@
 import time
 
-def criador(n): #criador da matriz
+
+def criador(n): # criador da matriz vazia
     l=[]
 
     for i in range(n):
@@ -13,7 +14,7 @@ def criador(n): #criador da matriz
 
 
 
-def criador2(n):
+def criador2(n): # cria a matriz de conferencia
     m = [1]
     x = []
     for i in range(n-1):
@@ -30,14 +31,14 @@ def criador2(n):
 
 
 
-def contador(l): #soma todos os elemntos da lista
+def contador(l): # soma todos os elemntos da lista
     soma = 0
     for i in range(len(l)):
         for j in range(len(l)):
             soma += l[i][j]
     return soma
 
-def menor(l): #acha o menor valor da lista
+def menor(l): # acha o menor valor da lista
     menor = 999999999999999999*9999
     for i in range(len(l)):
         for j in range(len(l)):
@@ -45,7 +46,7 @@ def menor(l): #acha o menor valor da lista
                 menor = l[i][j]
     return menor
 
-def diagonal(v):
+def diagonal(v): # identifica se o valor da matriz é uma diagonal
     c = False
     global n, m
     for i in range(n):
@@ -59,20 +60,19 @@ def diagonal(v):
     return c
         
 
-def verificador(l): #verifica se as colunas e linhas tem o valor de C.M
+def verificador(l): # verifica se as colunas e linhas tem o valor de C.M
     v = 0
     for i in range(len(l)):
         somar = 0
         for j in range(len(l)):
             somar += l[j][i]
-        print(somar)
         if somar != cm:
             v = 1
+
     for i in range(len(l)):
         somar = 0
         for j in range(len(l)):
             somar += l[i][j]
-        print(somar)
         if somar != cm:
             v = 1
 
@@ -90,53 +90,51 @@ def verificador(l): #verifica se as colunas e linhas tem o valor de C.M
         print('Matriz Perfeita')
 
     
-def mostrar(l): #visualizaçao da matriz
-    time.sleep(0.45)
+def mostrar(l): # visualizaçao da matriz
+    global n
+    time.sleep(4/n)
     for i in range(len(l)):
         print(l[i])
     print()
 
-def removedor(v): #remove valor da lista de conferencia
+def removedor(v): # remove valor da lista de conferencia
     global l
     for i in range(len(l)):
         for j in range(len(l)):
             if l[i][j] == v:
                 l[i][j] = 0
 
-n = 10
-#int(input('n: '))
-m = criador(n) #matriz
-l = criador2(n) #lista de conferencia
-x = int((n+1)/2) - 1 #localização da metade da matriz
-y = n-1 # localização de 'n' na lista
-sm = int(n**2 + 1) #S.M
-cm = int(((n**2 + 1)/2)*n) #C.M
-st = int(((n**2+1)/2)*(n**2)) #S.T
+n = int(input('Digite o valor de n para a matriz: '))
+m = criador(n) # criar matriz
+l = criador2(n) # criar lista de conferencia
+x = int((n+1)/2) - 1 # localização da metade da matriz
+y = n-1 # localização de 'n' na matriz
+sm = int(n**2 + 1) # Soma Magica
+cm = int(((n**2 + 1)/2)*n) # Constante Magica
+st = int(((n**2+1)/2)*(n**2)) # Soma de Termos
 
 if n % 2 == 0:
     
+    # valores fixos
     m[0][0] = 1
-    # mostrar (m)
+    mostrar (m)
     m[y][0] = n
-    # mostrar (m)
+    mostrar (m)
     w = y
 
-    for i in range(y):
+    for i in range(y): # diagonais
         m[i+1][i+1] = m[i][i] + n + 1
-        # mostrar (m)
+        mostrar (m)
         m[w-1][i+1] = m[w][i] + n - 1
-        # mostra+r (m)
+        mostrar (m)
         w -= 1
-
-
     
-    if n % 4 == 0:
+    if n % 4 == 0: # Matriz de ordem par com modulo 4 = 0
 
-
-        for f in range(x+1):
-            if f % 2 == 0:
+        for f in range(x+1): # preenchimento
+            if f % 2 == 0: 
                 for i in range(0, y+1):
-                    if not diagonal(l[i][f]):
+                    if not diagonal(l[i][f]): 
                         if (l[i][f] % 2 == 0 and i <= x) or (l[i][f] % 2 != 0 and i > x):
                             m[y-i][y-f] = l[i][f]
                         elif (l[i][f] % 2 != 0 and i <= x) or (l[i][f] % 2 == 0 and i > x): 
@@ -160,60 +158,109 @@ if n % 2 == 0:
                             m[i][y-f] = l[i][y-f]
                         mostrar (m)
 
-    else:
+    else: # Matriz de ordem par com modulo 4 = 2
         m[x][y] = l[x][0]
+        mostrar (m)
         m[x+1][y] = l[x+1][0]
+        mostrar (m)
 
         m[x][0] = sm - m[x][y]
+        mostrar (m)
         m[x+1][0] = sm - m[x+1][y]
+        mostrar (m)
 
         m[y][x] = l[0][x]
+        mostrar (m)
         m[y][x+1] = l[0][x+1]
+        mostrar (m)
         m[0][x] = sm - m[y][x]
+        mostrar (m)
         m[0][x+1] = sm - m[y][x+1]
+        mostrar (m)
 
-        for i in range(1,x):
+        for i in range(1,x): # colunas centrais
             if i % 2 == 0:
                 m[x][y-i] = l[x][i]
+                mostrar (m)
                 m[x+1][y-i] = l[x+1][i]
+                mostrar (m)
                 m[x+1][i] = sm - m[x][y-i]
+                mostrar (m)
                 m[x][i] = sm - m[x+1][y-i]
+                mostrar (m)
 
                 m[y-i][x] = l[i][x]
+                mostrar (m)
                 m[y-i][x+1] = l[i][x+1]
+                mostrar (m)
                 m[i][x+1] = sm - m[y-i][x]
+                mostrar (m)
                 m[i][x] = sm - m[y-i][x+1]
+                mostrar (m)
             else:
                 m[x+1][i] = l[x][y-i]
+                mostrar (m)
                 m[x+1][y-i] = l[x][i]
+                mostrar (m)
                 m[x][i] = sm - m[x+1][i]
+                mostrar (m)
                 m[x][y-i] = sm - m[x+1][y-i]
+                mostrar (m)
 
                 m[y-i][x] = l[y-i][x+1]
+                mostrar (m)
                 m[y-i][x+1] = sm - m[y-i][x]
+                mostrar (m)
                 m[i][x+1] = l[y-i][x]
+                mostrar (m)
                 m[i][x] = sm - m[i][x+1]
+                mostrar (m)
 
-        
+        for f in range(x): # preenchimento
+            for i in range(x):
+                if diagonal(m[i][f]):
+                    for g in range(f+1,x):
+                        if (l[y-g][f] % 2 != 0 and f % 2 == 0) or (l[y-g][f] % 2 == 0 and f % 2 != 0):
+                            m[g][f] = l[y-g][f]
+                            mostrar (m)
+                            m[g][y-f] = l[y-g][y-f]
+                            mostrar (m)
+                            m[y-g][y-f] = l[g][f]
+                            mostrar (m)
+                            m[y-g][f] = l[g][y-f]
+                            mostrar (m)
 
-        
-        
-                
+                            m[f][g] = l[f][y-g]
+                            mostrar (m)
+                            m[y-f][g] = l[y-f][y-g]
+                            mostrar (m)
+                            m[y-f][y-g] = l[f][g]
+                            mostrar (m)
+                            m[f][y-g] = l[y-f][g]
+                            mostrar (m)
+                        else:
+                            m[g][f] = l[g][f]
+                            mostrar (m)
+                            m[g][y-f] = l[g][y-f]
+                            mostrar (m)
+                            m[y-g][y-f] = l[y-g][f]
+                            mostrar (m)
+                            m[y-g][f] = l[y-g][y-f]
+                            mostrar (m)
 
-
-
-
-
-        # for i in range(x):
-        #     for f in range(x):
-        #         if not diagonal(l[i][f]):
-        #             print(123)
-        #             m[y-i][y-f] = l[i][f]
+                            m[f][g] = l[f][g]
+                            mostrar (m)
+                            m[y-f][g] = l[y-f][g]
+                            mostrar (m)
+                            m[y-f][y-g] = l[f][y-g]
+                            mostrar (m)
+                            m[f][y-g] = l[y-f][y-g]
+                            mostrar (m)
 
                         
 
     mostrar(m)
-else:
+else: #valores impares
     z = int((n**2 + 1)/2) 
 
     #valores fixos
@@ -346,4 +393,4 @@ else:
 
 
 
-# verificador(m)
+verificador(m)
