@@ -333,32 +333,6 @@ else: #valores impares
     l2 = 0
     while contador(l) > 0:
 
-        while True:
-            a = 0
-
-            for j in range(x):
-                if m[l1][j] == ' ':
-                    m[l1][j] = menor(l)
-                    mostrar (m)
-                    m[l2][j] = sm - m[l1][j]
-                    mostrar (m)
-                    removedor(m[l1][j])
-                    removedor(m[l2][j])
-                    break
-
-            for j in range(y, x, -1):
-                if m[l2][j] == ' ':
-                    m[l2][j] = menor(l)
-                    mostrar (m)
-                    m[l1][j] = sm - m[l2][j]
-                    mostrar (m)
-                    removedor(m[l2][j])
-                    removedor(m[l1][j])
-                    a += 1
-                    break
-
-            if a == 0:
-                break
             
         while True:
             a = 0
@@ -387,6 +361,32 @@ else: #valores impares
             if a == 0:
                 break
             
+        while True:
+            a = 0
+
+            for j in range(x):
+                if m[l1][j] == ' ':
+                    m[l1][j] = menor(l)
+                    mostrar (m)
+                    m[l2][j] = sm - m[l1][j]
+                    mostrar (m)
+                    removedor(m[l1][j])
+                    removedor(m[l2][j])
+                    break
+
+            for j in range(y, x, -1):
+                if m[l2][j] == ' ':
+                    m[l2][j] = menor(l)
+                    mostrar (m)
+                    m[l1][j] = sm - m[l2][j]
+                    mostrar (m)
+                    removedor(m[l2][j])
+                    removedor(m[l1][j])
+                    a += 1
+                    break
+
+            if a == 0:
+                break
             
         l1 -= 1 
         l2 += 1
