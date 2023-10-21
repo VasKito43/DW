@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register</title>
     <link rel="stylesheet" href="avaliacao.css">
 </head>
 <body>
-    <div class="container">
-        <div class="login">login</div>
-        <div class="register">register</div>
+    <div class="container1">
+        <div class="login">
+            <form class="login">
+                <button id="login" class="buttonlog">Login</button>
+            </form>
+        </div>
+        <div class="register">
+            <form class="register">
+                <button id="register" class="buttonreg">Register</button>
+            </form>
+        </div>
         <div class="logo"><img src="logo.png" alt="logo">Create your account</div>
         <div class="box1">
             <div class="nome">
                 <p class="txt">Full Name</p><br>
                 
                 <form>
-                    <input class="input" name="name" autocomplete="off" required />
+                    <input type="text" id="nome" class="input" name="name" autocomplete="off" required />
                     <label for="name">
                       <span>Full Name</span>
                     </label>
@@ -30,7 +38,7 @@
                 <p class="txt">Email</p><br>
                 
                 <form>
-                    <input class="input" name="name" autocomplete="off" required />
+                    <input type="text" id="email" class="input" name="name" autocomplete="off" required />
                     <label for="name">
                       <span>Email</span>
                     </label>
@@ -44,7 +52,7 @@
                 <p class="txt">Password</p><br>
                 
                 <form>
-                    <input class="input" name="name" autocomplete="off" required />
+                    <input type="password" id="senha" class="input" name="name" autocomplete="off" required />
                     <label for="name">
                       <span>Password</span>
                     </label>
@@ -55,9 +63,18 @@
 
         <div class="box4">
             <form class="fp">
-                <button>Forgot Password?</button>
+                <button onclick="esqueceu()" id="fp" class="buttonfp">Forgot Password?</button>
             </form>
+        </div>
 
+        <div class="box5">
+            <form class="create">
+                <button id="ca" class="ca" onclick="verificador()">Create Account</button>
+            </form>
+        </div>
+
+        <div class="img">
+            <img src="login-illustrator.png" alt="imagem">
         </div>
 
     </div>

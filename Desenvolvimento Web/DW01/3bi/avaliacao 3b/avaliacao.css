@@ -6,42 +6,51 @@
     
 }
 
-.container{
-    width: 480px;
-    height: 1000px;
-    background-color: aliceblue;
+.container1{
+    width: 100vw;
+    height: 100vh;
     display: grid;
     grid-template-areas: 
-        "b1 b2"
-        "b3 b3"
-        "b4 b4"
-        "b5 b5"
-        "b6 b6"
-        "b7 b7";
-        grid-template-rows: 100px 200px 100px 100px 100px 100px;
-    grid-template-columns: 240px 240px;
+        "b1 b2 b9"
+        "b3 b3 b9"
+        "b4 b4 b9"
+        "b5 b5 b9"
+        "b6 b6 b9"
+        "b7 b7 b9"
+        "b8 b8 b9";
+        grid-template-rows: 13.33vh 29.66vh 13.33vh 13.33vh 13.33vh 3vh 13.36vh ;
+    grid-template-columns: 13.64vw 13.64vw 72.73vw;
 }
 
 .login{
-    color: #1E2772;
     grid-area: b1;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.buttonlog{
+    font-weight: bold;
+    border: none;
+    font: normal 12pt Arial;
     font-weight: bold;
 }
 
 .register{
-    color: #FD7401;
     grid-area: b2;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
+
+}
+
+.buttonreg{
+  font: normal 12pt Arial;
+  border: none;
+  font-weight: bold;
 }
 
 .logo{
-    /* background-color: rgb(255, 127, 217); */
     grid-area: b3;
     display: flex;
     justify-content: center;
@@ -93,23 +102,51 @@
     font: normal 7pt Arial;
     padding-left: 50px;
     margin: -10px;
-    color: #747373;
 }
 
 .fp{
-    padding-left: 290px;
+    padding-left: 250px;
 }
 
 .box4{
     grid-area: b7;
-    
 }
 
+.box5{
+  grid-area: b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.ca{
+  width: 328px;
+  height: 57px;
+  border: none;  
+  border-radius: 7px;
+  
+}
 
+.buttonfp{
+  border: none;
+  text-decoration: underline;
+  font-size: 11px;
+}
 
-
-
+.img{
+  grid-area: b9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 
 
@@ -122,26 +159,16 @@ form {
     width: 80%;
     border-radius: 7px;
   }
-
-  button{
-    border: none;
-    color: #006eff;
-    text-decoration: underline;
-    font-size: 11px;
-  }
   
   input {
-    color: #000000;
     font-size: 28px;
     width: 100%;
     padding: 20px 5px 5px;
-    background-color: #e2e2e2;
     border: none;
     border-radius: 7px;
   }
   
   label {
-    color: #747373;
     position: absolute;
     left: 0;
     bottom: 0;
