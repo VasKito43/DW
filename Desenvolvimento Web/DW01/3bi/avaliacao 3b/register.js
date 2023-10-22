@@ -47,15 +47,6 @@ botaocreate.addEventListener("click", function(event) {
     event.preventDefault()
 })
 
-var botaoregistra = document.getElementById("register")
-botaoregistra.addEventListener("click", function(event) {
-    event.preventDefault()
-})
-
-var botaologin = document.getElementById("login")
-botaologin.addEventListener("click", function(event) {
-    event.preventDefault()
-})
 
 
 function verificador(){

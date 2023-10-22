@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="avaliacao.css">
+    <link rel="stylesheet" href="login.css">
 
 
 </head>
@@ -12,9 +12,77 @@
     
 
     <div class="container2">
-        
+        <div class="login">
+            <form class="login">
+                <p id="login" class="buttonlog"><a href="login.html" rel="prev" target="_self">Login</a></p>
+            </form>
+        </div>
+        <div class="register">
+            <form class="register">
+                <p id="register" class="buttonreg" ><a href="register.html" rel="prev" target="_self">Register</a></p>
+            </form>
+        </div>
+        <div class="logo"><img src="logo.png" alt="logo">Login into your account</div>
+
+        <div class="box2">
+            <div class="nome">
+                <p class="txt">Email Address</p><br>
+                
+                <div class="caixa">
+                    <form>
+                        <input type="text" id="email" class="input" name="name" autocomplete="off" required />
+                        <label for="name">
+                          <span>Enter  your email</span>
+                        </label>
+                        
+                    </form>
+                    <div class="frame">
+                        <img src="Frame.png" alt="frame1">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="box3">
+            <div class="nome">
+                <p class="txt">Password</p><br>
+                
+                <div class="caixa">
+                    <form>
+                        <input type="password" id="senha" class="input" name="name" autocomplete="off" required />
+                        <label for="name">
+                          <span>Enter your password</span>
+                        </label>
+                    </form>
+                    <div class="frame">
+                        <img src="Frame (1).png" alt="frame1">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="box4">
+            <form class="fp">
+                <button onclick="esqueceu()" id="fp" class="buttonfp">Forgot Password?</button>
+            </form>
+        </div>
+
+        <div class="box5">
+            <form class="create">
+                <button id="enter" class="enter" onclick="verificar()">Login</button>
+            </form>
+        </div>
+
+        <div class="img">
+            <img src="login-illustrator.png" alt="imagem">
+        </div>
+
+    </div>
     </div>
 
+    
 
 
 
@@ -23,6 +91,6 @@
 
 
 
-    <script src="avaliacao.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
