@@ -1,22 +1,17 @@
-def somar_termos(lista):
-    s = 0
-    for sublist in lista:
-        for num in sublist:
-            s += num
-    return s
+import tkinter as tk
 
-def st(n):
-    s = ((n ** 2) / 2) * (n ** 2)
-    return s
+def coletar_entrada():
+    valor = entry.get()
+    print("O valor inserido foi:", valor)
 
-def cm(n):
-    c = ((n ** 2) / 2) * n
-    return c
+root = tk.Tk()
+root.title("Coleta de Entrada no Tkinter")
 
-def matriz_1():
-    l = [[1]]  # A lista deve conter sublistas, então aqui usamos [[1]]
-    st_value = somar_termos(l)
-    if st_value == st(1) and cm(1) == 1:
-        print(l)
+# Função para coletar a entrada ao pressionar o botão
+entry = tk.Entry(root)
+entry.pack()
 
-matriz_1()
+botao = tk.Button(root, text="Coletar", command=coletar_entrada)
+botao.pack()
+
+root.mainloop()

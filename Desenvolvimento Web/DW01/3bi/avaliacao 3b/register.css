@@ -11,19 +11,19 @@
     height: 100vh;
     display: grid;
     grid-template-areas: 
-        "b1 b2 b9"
-        "b3 b3 b9"
-        "b4 b4 b9"
-        "b5 b5 b9"
-        "b6 b6 b9"
-        "b7 b7 b9"
-        "b8 b8 b9";
+        "login    register imagem"
+        "network  network  imagem"
+        "name     name     imagem"
+        "email    email    imagem"
+        "password password imagem"
+        "forgot   forgot   imagem"
+        "create   create   imagem";
         grid-template-rows: 13.33vh 29.66vh 13.33vh 13.33vh 13.33vh 3vh 13.36vh ;
     grid-template-columns: 13.64vw 13.64vw 72.73vw;
 }
 
 .login{
-    grid-area: b1;
+    grid-area: login;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@
 }
 
 .register{
-    grid-area: b2;
+    grid-area: register;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +51,7 @@
 }
 
 .logo{
-    grid-area: b3;
+    grid-area: network;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +62,7 @@
 
 .box1{
     
-    grid-area: b4;
+    grid-area: name;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +71,7 @@
 
 .box2{
     
-    grid-area: b5;
+    grid-area: email;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +80,7 @@
 
 .box3{
     
-    grid-area: b6;
+    grid-area: password;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,11 +109,11 @@
 }
 
 .box4{
-    grid-area: b7;
+    grid-area: forgot;
 }
 
 .box5{
-  grid-area: b8;
+  grid-area: create;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,7 +141,7 @@
 }
 
 .img{
-  grid-area: b9;
+  grid-area: imagem;
   display: flex;
   justify-content: center;
   align-items: center;

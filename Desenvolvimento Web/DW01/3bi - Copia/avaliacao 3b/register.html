@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container2 {
+            width: 1000px;
+            height: 1728px;
+            display: grid;
+            grid-template-areas: 
+                "b1 b2 b9"
+                "b3 b3 b9"
+                "b4 b4 b9"
+                "b5 b5 b9"
+                "b6 b6 b9"
+                "b7 b7 b9"
+                "b8 b8 b9";
+            grid-template-rows: 140px 300px 130px 130px 130px 30px 140px;
+            grid-template-columns: 240px 240px 1248px;
+        }
+
+        .login2 {
+            grid-area: b1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .buttonlog2 {
+            font-weight: bold;
+            border: none;
+            font: normal 12pt Arial;
+            font-weight: bold;
+        }
+
+        .register2 {
+            grid-area: b2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .buttonreg2 {
+            font: normal 12pt Arial;
+            border: none;
+            font-weight: bold;
+        }
+
+        .logo2 {
+            grid-area: b3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-weight: bold;
+            font: normal 17pt Arial;
+        }
+
+        .box4 {
+            grid-area: b4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .box5 {
+            grid-area: b5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .box6 {
+            grid-area: b6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .name2 {
+            width: 410px;
+            height: 84px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .txt2 {
+            display: flex;
+            align-self: flex-start;
+            font: normal 7pt Arial;
+            padding-left: 50px;
+            margin: -10px;
+        }
+
+        .fp2 {
+            padding-left: 250px;
+        }
+
+        .box7 {
+            grid-area: b7;
+        }
+
+        .box8 {
+            grid-area: b8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .create2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .ca2 {
+            width: 328px;
+            height: 57px;
+            border: none;
+            border-radius: 7px;
+        }
+
+        .buttonfp2 {
+            border: none;
+            text-decoration: underline;
+            font-size: 11px;
+        }
+
+        .img2 {
+            grid-area: b9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        form {
+            overflow: hidden;
+            position: relative;
+            width: 80%;
+            border-radius: 7px;
+        }
+
+        input {
+            font-size: 28px;
+            width: 100%;
+            padding: 20px 5px 5px;
+            border: none;
+            border-radius: 7px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container2">
+        <div class="login2">
+            <form class="login2">
+                <p id="login2" class="buttonlog2"><a href="login.html" rel="prev" target="_self">Login</a></p>
+            </form>
+        </div>
+        <div class="register2">
+            <form class="register2">
+                <p id="register2" class="buttonreg2"><a href="register.html" rel="prev" target="_self">Register</a></p>
+            </form>
+        </div>
+        <div class="logo2"><img src="logo.png" alt="logo">Create your account</div>
+        <div class="box4">
+            <div class="name2">
+                <p class="txt2">Full Name</p><br>
+                
+                <form>
+                    <input type="text" id="name2" class="input" name="name" placeholder="John Doe" autocomplete="off" required />
+                </form>
+
+            </div>
+        </div>
+
+        <div class="box5">
+            <div class="name2">
+                <p class="txt2">Email</p><br>
+                
+                <form>
+                    <input type="text" id="email2" class="input" name="name" placeholder="john@email.com" autocomplete="off" required />
+                </form>
+
+            </div>
+        </div>
+
+        <div class="box6">
+            <div class="name2">
+                <p class="txt2">Password</p><br>
+                
+                <form>
+                    <input type="password" id="password2" class="input" name="name" placeholder="Enter your password" autocomplete="off" required />
+                </form>
+
+            </div>
+        </div>
+
+        <div class="box7">
+            <form class="fp2">
+                <button id="fp2" class="buttonfp2">Forgot Password?</button>
+            </form>
+        </div>
+
+        <div class="box8">
+            <form class="create2">
+                <button id="ca2" class="ca2" onclick="verificador()">Create Account</button>
+            </form>
+        </div>
+
+        <div class="img2">
+            <img src="login-illustrator.png" alt="imagem">
+        </div>
+
+    </div>
+
+    <script>
+        var azul2 = "#1E2772"
+        var laranja2 = "#FD7401"
+        var branco2 = "white"
+        var cinzaEscuro2 = "#747373"
+        var azulClaro2 = "#006eff"
+        var cinzaClaro2 = "#e2e2e2"
+        
+        
+        var registrar2 = document.querySelector(".buttonreg2")
+        var login2 = document.querySelector(".buttonlog2")
+        var forgot2 = document.querySelector(".buttonfp2")
+        var create2 = document.querySelector(".ca2")
+        var img2 = document.querySelector(".img2")
+        
+        var txt2 = document.getElementsByClassName("txt2")
+        var label2 = document.querySelectorAll("label")
+        var input2 = document.querySelectorAll("input")
+        
+        
+        registrar2.style.color = laranja2
+        registrar2.style.backgroundColor = branco2
+        login2.style.color = azul2
+        login2.style.backgroundColor = branco2
+        forgot2.style.color = azulClaro2
+        forgot2.style.backgroundColor = branco2
+        create2.style.backgroundColor = laranja2
+        create2.style.color = branco2
+        img2.style.backgroundColor = cinzaClaro2
+        
+        for (var i = 0; i < txt2.length; i++) {
+            txt2[i].style.color = cinzaEscuro2
+        }
+        for (var i = 0; i < label2.length; i++) {
+            label2[i].style.color = cinzaEscuro2
+        }
+        for (var i = 0; i < input2.length; i++) {
+            input2[i].style.backgroundColor = cinzaClaro2
+        }
+    
+        var botaofp2 = document.getElementById("fp2")
+        botaofp2.addEventListener("click", function(event) {
+            event.preventDefault()
+        })
+    
+        var botaocreate2 = document.getElementById("ca2")
+        botaocreate2.addEventListener("click", function(event) {
+            event.preventDefault()
+        })
+    
+        function verificador2() {
+            var nome2 = document.getElementById("name2").value
+            var email2 = document.getElementById("email2").value
+            var senha2 = document.getElementById("password2").value
+            if (nome2 === "") {
+                alert("Coloque um nome válido")
+            } else if (email2 === "") {
+                alert("Coloque um email válido")
+            } else if (senha2.length < 8) {
+                alert("Senha deve ter no mínimo 8 caracteres")
+            } else {
+                alert("Cadastro realizado com sucesso")
+                limpar2()
+            }
+            nome2.value = "";
+        }
+    
+        function limpar2() {
+            var nome2 = document.getElementById("name2")
+            var email2 = document.getElementById("email2")
+            var senha2 = document.getElementById("password2")
+    
+            nome2.value = ""
+            email2.value = ""
+            senha2.value = ""
+        }
+    </script>
+</body>
+</html>

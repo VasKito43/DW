@@ -12,18 +12,18 @@
     height: 100vh;
     display: grid;
     grid-template-areas: 
-        "b1 b2 b9"
-        "b3 b3 b9"
-        "b5 b5 b9"
-        "b6 b6 b9"
-        "b7 b7 b9"
-        "b8 b8 b9";
+        "login    regiter  imagem"
+        "network  network  imagem"
+        "email    email    imagem"
+        "password password imagem"
+        "forgot   forgot   imagem"
+        "log      log      imagem";
         grid-template-rows: 13.33vh 29.66vh 13.33vh 13.33vh  3vh 26.69vh ;
     grid-template-columns: 13.64vw 13.64vw 72.73vw;
 }
 
 .login{
-    grid-area: b1;
+    grid-area: login;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@
 }
 
 .register{
-    grid-area: b2;
+    grid-area:regiter;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +51,7 @@
 }
 
 .logo{
-    grid-area: b3;
+    grid-area: network;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +63,7 @@
 
 .box2{
     
-    grid-area: b5;
+    grid-area: email;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,9 +78,8 @@
 }
 
 .frame{
-  background-color: #FD7401;
   border-radius: 7px;
-  width: 10%;
+  width: 14%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -90,7 +89,7 @@
 
 .box3{
     
-    grid-area: b6;
+    grid-area: password;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,11 +118,11 @@
 }
 
 .box4{
-    grid-area: b7;
+    grid-area: forgot;
 }
 
 .box5{
-  grid-area: b8;
+  grid-area: log;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,7 +156,7 @@
 }
 
 .img{
-  grid-area: b9;
+  grid-area: imagem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,7 +174,7 @@ a {
 form {
     overflow: hidden;
     position: relative;
-    width: 80%;
+    width: 75%;
     border-radius: 7px;
   }
   

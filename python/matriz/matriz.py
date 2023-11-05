@@ -1,6 +1,5 @@
 import time
 
-
 def criador(n): # criador da matriz vazia
     l=[]
 
@@ -11,8 +10,6 @@ def criador(n): # criador da matriz vazia
         l.append(k)
 
     return l
-
-
 
 def criador2(n): # cria a matriz de conferencia
     m = [1]
@@ -28,8 +25,6 @@ def criador2(n): # cria a matriz de conferencia
             z[f] += 1
         x.append(z)
     return x
-
-
 
 def contador(l): # soma todos os elemntos da lista
     soma = 0
@@ -113,21 +108,29 @@ sm = int(n**2 + 1) # Soma Magica
 cm = int(((n**2 + 1)/2)*n) # Constante Magica
 st = int(((n**2+1)/2)*(n**2)) # Soma de Termos
 
-if n % 2 == 0:
+print()
+if n <= 2:
+    print('matriz impossivel')
+
+elif n % 2 == 0:
     
     # valores fixos
     m[0][0] = 1
-    mostrar (m)
     m[y][0] = n
+    m[y][y] = n**2
+    print('valores fixos')
+    print()
     mostrar (m)
+
     w = y
 
     for i in range(y): # diagonais
         m[i+1][i+1] = m[i][i] + n + 1
-        mostrar (m)
         m[w-1][i+1] = m[w][i] + n - 1
-        mostrar (m)
         w -= 1
+    print('diagonais')
+    print()
+    mostrar (m)
     
     if n % 4 == 0: # Matriz de ordem par com modulo 4 = 0
 
@@ -143,7 +146,6 @@ if n % 2 == 0:
                             m[y-i][f] = l[i][y-f]
                         elif (l[i][y-f] % 2 != 0 and i <= x) or (l[i][y-f] % 2 == 0 and i > x): 
                             m[i][y-f] = l[i][y-f]
-                        mostrar (m)
 
             else:
                 for i in range(0, y+1):
@@ -156,65 +158,44 @@ if n % 2 == 0:
                             m[y-i][f] = l[i][y-f]
                         elif (l[i][y-f] % 2 == 0 and i <= x) or (l[i][y-f] % 2 != 0 and i > x): 
                             m[i][y-f] = l[i][y-f]
-                        mostrar (m)
+
 
     else: # Matriz de ordem par com modulo 4 = 2
         m[x][y] = l[x][0]
-        mostrar (m)
         m[x+1][y] = l[x+1][0]
-        mostrar (m)
 
         m[x][0] = sm - m[x][y]
-        mostrar (m)
         m[x+1][0] = sm - m[x+1][y]
-        mostrar (m)
 
         m[y][x] = l[0][x]
-        mostrar (m)
         m[y][x+1] = l[0][x+1]
-        mostrar (m)
         m[0][x] = sm - m[y][x]
-        mostrar (m)
         m[0][x+1] = sm - m[y][x+1]
-        mostrar (m)
 
         for i in range(1,x): # colunas centrais
             if i % 2 == 0:
                 m[x][y-i] = l[x][i]
-                mostrar (m)
                 m[x+1][y-i] = l[x+1][i]
-                mostrar (m)
                 m[x+1][i] = sm - m[x][y-i]
-                mostrar (m)
                 m[x][i] = sm - m[x+1][y-i]
-                mostrar (m)
 
                 m[y-i][x] = l[i][x]
-                mostrar (m)
                 m[y-i][x+1] = l[i][x+1]
-                mostrar (m)
                 m[i][x+1] = sm - m[y-i][x]
-                mostrar (m)
                 m[i][x] = sm - m[y-i][x+1]
-                mostrar (m)
             else:
                 m[x+1][i] = l[x][y-i]
-                mostrar (m)
                 m[x+1][y-i] = l[x][i]
-                mostrar (m)
                 m[x][i] = sm - m[x+1][i]
-                mostrar (m)
                 m[x][y-i] = sm - m[x+1][y-i]
-                mostrar (m)
 
                 m[y-i][x] = l[y-i][x+1]
-                mostrar (m)
                 m[y-i][x+1] = sm - m[y-i][x]
-                mostrar (m)
                 m[i][x+1] = l[y-i][x]
-                mostrar (m)
                 m[i][x] = sm - m[i][x+1]
-                mostrar (m)
+        print('colunas')
+        print()
+        mostrar (m)
 
         for f in range(x): # preenchimento
             for i in range(x):
@@ -222,63 +203,42 @@ if n % 2 == 0:
                     for g in range(f+1,x):
                         if (l[y-g][f] % 2 != 0 and f % 2 == 0) or (l[y-g][f] % 2 == 0 and f % 2 != 0):
                             m[g][f] = l[y-g][f]
-                            mostrar (m)
                             m[g][y-f] = l[y-g][y-f]
-                            mostrar (m)
                             m[y-g][y-f] = l[g][f]
-                            mostrar (m)
                             m[y-g][f] = l[g][y-f]
-                            mostrar (m)
 
                             m[f][g] = l[f][y-g]
-                            mostrar (m)
                             m[y-f][g] = l[y-f][y-g]
-                            mostrar (m)
                             m[y-f][y-g] = l[f][g]
-                            mostrar (m)
                             m[f][y-g] = l[y-f][g]
-                            mostrar (m)
                         else:
                             m[g][f] = l[g][f]
-                            mostrar (m)
                             m[g][y-f] = l[g][y-f]
-                            mostrar (m)
                             m[y-g][y-f] = l[y-g][f]
-                            mostrar (m)
                             m[y-g][f] = l[y-g][y-f]
-                            mostrar (m)
 
                             m[f][g] = l[f][g]
-                            mostrar (m)
                             m[y-f][g] = l[y-f][g]
-                            mostrar (m)
                             m[y-f][y-g] = l[f][y-g]
-                            mostrar (m)
                             m[f][y-g] = l[y-f][y-g]
-                            mostrar (m)
 
                         
-
+    print('preenchimento')
+    print()
     mostrar(m)
+    verificador(m)
 else: #valores impares
     z = int((n**2 + 1)/2) 
 
     #valores fixos
 
     m[0][0] = 2
-    mostrar (m)
     m[x][x] = z
-    mostrar (m)
     m[x][y] = 3
-    mostrar (m)
     m[y][x] = 1
-    mostrar (m)
     m[0][x] = sm - 1
-    mostrar (m)
     m[y][y] = sm - 2
-    mostrar (m)
     m[x][0] = sm - 3
-    mostrar (m)
 
     removedor(m[0][0])
     removedor(m[x][x])
@@ -288,44 +248,52 @@ else: #valores impares
     removedor(m[y][y])
     removedor(m[x][0])
 
+    print('valores fixos')
+    print()
+    mostrar (m)
+
 
     c = int((n+1)/2)
     p = n - 1
     for i in range(n): #primeira diagonal
         c = c - 1
         m[i][p-i] = z - c
-        mostrar (m)
         removedor(m[i][p-i])
 
     for i in range(x-1): #segunda diagonal
         m[i+1][i+1] = m[i][i] + n
-        mostrar (m)
         removedor(m[i+1][i+1])
 
     for i in range(y, x+1, -1): #segunda diagonal
         m[i-1][i-1] = m[i][i] - n
-        mostrar (m)
         removedor(m[i-1][i-1])
+    print('diagonal')
+    print()
+    mostrar (m)
 
     for i in range(x-1): #coluna central
         m[i+1][x] = m[i][x] - n
-        mostrar (m)
         removedor(m[i+1][x])
 
     for i in range(y, x+1, -1): #coluna central
         m[i-1][x] = m[i][x] + n
-        mostrar (m)
         removedor(m[i-1][x])
+
+    print('coluna central')
+    print()
+    mostrar (m)
 
     for i in range(x-1): #linha central
         m[x][i+1] = m[x][i] - n
-        mostrar (m)
         removedor(m[x][i+1])
 
     for i in range(y, x+1, -1): #linha central
         m[x][i-1] = m[x][i] + n
-        mostrar (m)
         removedor(m[x][i-1])
+    
+    print('linha central')
+    print()
+    mostrar (m)
 
     #ordem crescente    
     w=0
@@ -340,9 +308,7 @@ else: #valores impares
             for j in range(x):
                 if m[j][l2] == ' ':
                     m[j][l2] = menor(l)
-                    mostrar (m)
                     m[j][l1] = sm - m[j][l2]
-                    mostrar (m)
                     removedor(m[j][l2])
                     removedor(m[j][l1])
                     break
@@ -350,9 +316,7 @@ else: #valores impares
             for j in range(y, x, -1):
                 if m[j][l1] == ' ':
                     m[j][l1] = menor(l)
-                    mostrar (m)
                     m[j][l2] = sm - m[j][l1]
-                    mostrar (m)
                     removedor(m[j][l1])
                     removedor(m[j][l2])
                     a += 1
@@ -367,9 +331,7 @@ else: #valores impares
             for j in range(x):
                 if m[l1][j] == ' ':
                     m[l1][j] = menor(l)
-                    mostrar (m)
                     m[l2][j] = sm - m[l1][j]
-                    mostrar (m)
                     removedor(m[l1][j])
                     removedor(m[l2][j])
                     break
@@ -377,9 +339,7 @@ else: #valores impares
             for j in range(y, x, -1):
                 if m[l2][j] == ' ':
                     m[l2][j] = menor(l)
-                    mostrar (m)
                     m[l1][j] = sm - m[l2][j]
-                    mostrar (m)
                     removedor(m[l2][j])
                     removedor(m[l1][j])
                     a += 1
@@ -390,7 +350,9 @@ else: #valores impares
             
         l1 -= 1 
         l2 += 1
+    print('preenchimento')
+    print()
+    mostrar(m)
+    verificador(m)
 
 
-
-verificador(m)

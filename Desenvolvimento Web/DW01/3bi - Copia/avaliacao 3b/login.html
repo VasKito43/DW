@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+                
+        }
+        
+        
+        .container3 {
+            width: 1000px;
+            height: 1728px;
+            display: grid;
+            grid-template-areas: 
+                "b1 b2 b9"
+                "b3 b3 b9"
+                "b5 b5 b9"
+                "b6 b6 b9"
+                "b7 b7 b9"
+                "b8 b8 b9";
+            grid-template-rows: 140px 300px 140px 140px  30px 250px ;
+            grid-template-columns: 240px 240px 1248px;
+        }
+        
+        .login3 {
+            grid-area: b1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .buttonlog3 {
+            font-weight: bold;
+            border: none;
+            font: normal 12pt Arial;
+            font-weight: bold;
+        }
+        
+        .register3 {
+            grid-area: b2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        
+        .buttonreg3 {
+          font: normal 12pt Arial;
+          border: none;
+          font-weight: bold;
+        }
+        
+        .logo3 {
+            grid-area: b3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-weight: bold;
+            font: normal 17pt Arial;
+        }
+        
+        
+        .box2 {
+            
+            grid-area: b5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .caixa3 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        
+        }
+        
+        .frame3 {
+          background-color: #FD7401;
+          border-radius: 7px;
+          width: 10%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        
+        .box3 {
+            
+            grid-area: b6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .nome3 {
+            width: 410px;
+            height: 84px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .txt3 {
+            display: flex;
+            align-self: flex-start;
+            font: normal 9pt Arial;
+            padding-left: 50px;
+            margin: -10px;
+        }
+        
+        .fp3 {
+            padding-left: 250px;
+        }
+        
+        .box4 {
+            grid-area: b7;
+        }
+        
+        .box5 {
+          grid-area: b8;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        .create3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .ca3 {
+          width: 328px;
+          height: 57px;
+          border: none;  
+          border-radius: 7px;
+        }
+        
+        .enter3 {
+          width: 328px;
+          height: 57px;
+          border: none;  
+          border-radius: 7px;
+        }
+        
+        .buttonfp3 {
+          border: none;
+          text-decoration: underline;
+          font-size: 11px;
+        }
+        
+        .img3 {
+          grid-area: b9;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+          }
+      
+
+        form {
+            overflow: hidden;
+            position: relative;
+            width: 80%;
+            border-radius: 7px;
+          }
+          
+          input {
+            font-size: 28px;
+            width: 100%;
+            padding: 20px 5px 5px;
+            border: none;
+            border-radius: 7px;
+            
+          }
+          
+    </style>
+</head>
+<body>
+    <div class="container3">
+        <div class="login3">
+            <form class="login3">
+                <p id="login3" class="buttonlog3"><a href="login.html" rel="prev" target="_self">Login</a></p>
+            </form>
+        </div>
+        <div class="register3">
+            <form class="register3">
+                <p id="register3" class="buttonreg3"><a href="register.html" rel="prev" target="_self">Register</a></p>
+            </form>
+        </div>
+        <div class="logo3"><img src="logo.png" alt="logo">Login into your account</div>
+        <div class="box2">
+            <div class="nome3">
+                <p class="txt3">Email Address</p><br>
+                <div class="caixa3">
+                    <form>
+                        <input type="text" id="email3" class="input" name="name" placeholder="alex@email.com" autocomplete="off" required />
+                    </form>
+                    <div class="frame3">
+                        <img src="Frame.png" alt="frame1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="nome3">
+                <p class="txt3">Password</p><br>
+                <div class="caixa3">
+                    <form>
+                        <input type="password" id="senha3" class="input" placeholder="Enter your password" name="name" autocomplete="off" required />
+                    </form>
+                    <div class="frame3">
+                        <img src="Frame (1).png" alt="frame1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box4">
+            <form class="fp3">
+                <button  id="fp3" class="buttonfp3">Forgot Password?</button>
+            </form>
+        </div>
+        <div class="box5">
+            <form class="create3">
+                <button id="enter3" class="enter3" onclick="verificar()">Login</button>
+            </form>
+        </div>
+        <div class="img3">
+            <img src="login-illustrator.png" alt="imagem">
+        </div>
+    </div>
+
+    <script>
+        var azul3 = "#1E2772";
+        var laranja3 = "#FD7401";
+        var branco3 = "white";
+        var cinzaEscuro3 = "#747373";
+        var azulClaro3 = "#006eff";
+        var cinzaClaro3 = "#e2e2e2";
+            
+        var registrar3 = document.querySelector(".buttonreg3");
+        var login3 = document.querySelector(".buttonlog3");
+        var forgot3 = document.querySelector(".buttonfp3");
+        var enter3 = document.querySelector(".enter3");
+        var img3 = document.querySelector(".img3");
+            
+        var txt3 = document.getElementsByClassName("txt3");
+        var label3 = document.querySelectorAll("label");
+        var input3 = document.querySelectorAll("input");
+        
+        registrar3.style.color = laranja3;
+        registrar3.style.backgroundColor = branco3;
+        login3.style.color = azul3;
+        login3.style.backgroundColor = branco3;
+        forgot3.style.color = azulClaro3;
+        forgot3.style.backgroundColor = branco3;
+        enter3.style.backgroundColor = laranja3;
+        enter3.style.color = branco3;
+        img3.style.backgroundColor = cinzaClaro3;
+            
+        for (var i = 0; i < txt3.length; i++) {
+            txt3[i].style.color = cinzaEscuro3;
+        }
+        for (var i = 0; i < label3.length; i++) {
+            label3[i].style.color = cinzaEscuro3;
+        }
+        for (var i = 0; i < input3.length; i++) {
+            input3[i].style.backgroundColor = cinzaClaro3;
+        }
+    
+        
+        var botaocreate3 = document.getElementById("enter3");
+        botaocreate3.addEventListener("click", function(event) {
+            event.preventDefault();
+        });
+        
+        function limpar() {
+            var email3 = document.getElementById("email3");
+            var senha3 = document.getElementById("senha3");
+        
+            email3.value = "";
+            senha3.value = "";
+        }
+        
+        function verificar() {
+            var email3 = document.getElementById("email3").value;
+            var senha3 = document.getElementById("senha3").value;
+            if (email3 === "") {
+                alert("email errado");
+            } else if (senha3.length < 8) {
+                alert("senha pequena");
+            } else if (email3 !== "admin@email.com.br") {
+                alert("email não cadastrado");
+            } else if (senha3 !== "#dw1UTFPR#") {
+                alert("Senha errada");
+            } else {
+                alert("Usuário autenticado");
+                limpar();
+            }
+        }
+    </script>
+</body>
+</html>
