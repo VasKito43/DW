@@ -1,5 +1,5 @@
 import time
-import requests
+
 from tkinter import *
 
 def criar_tabela(matriz, quadrado):
