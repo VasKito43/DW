@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrado magico</title>
+    <link rel="stylesheet" href="../static/CSS/style.css">
+</head>
+<body>
+
+    <h1>Quadrado Magico</h1>
+    <form action="/quadrado" id="form_quadrado" method="post">
+        <label for="valor_n">Valor de n:</label>
+        <input type="text" name="valor_n" id="input_n" required placeholder="Digite aqui">
+        <button type="submit" id="button_quadrado">CRIAR</button>
+    </form>
+    {% set menssagem = get_flashed_messages() %}
+    {% if menssagem %}
+        <div class="flash_alerta">
+            {{menssagem[0]}}
+        </div>
+
+    {% endif %}
+</body>

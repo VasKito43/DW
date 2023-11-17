@@ -1,101 +1,11 @@
+from func import *
+from flask import Flask, render_template, redirect, request, flash
 
-def criador_de_matriz_vazia(n): # criador da matriz vazia
-    lista=[]
-
-    for i in range(n):
-        matriz_vazia=[] 
-        for j in range(n):
-            matriz_vazia.append(' ')
-        lista.append(matriz_vazia)
-
-    return lista
-
-def criador_de_matriz_de_conferencia(n): # cria a matriz de conferencia
-    matriz1 = [1]
-    matriz2 = []
-    for i in range(n-1):
-        matriz1.append(matriz1[i]+n)
-    matriz2.append(matriz1)
-    matriz3 = matriz1[:]
-    for i in range(n-1):
-        matriz1 = matriz3[:]
-        matriz3 = matriz1[:]
-        for f in range(n):
-            matriz3[f] += 1
-        matriz2.append(matriz3)
-    return matriz2
-
-def contador(lista_de_conferencia): # soma todos os elemntos da lista
-    soma = 0
-    for linha in range(len(lista_de_conferencia)):
-        for coluna in range(len(lista_de_conferencia)):
-            soma += lista_de_conferencia[linha][coluna]
-    return soma
-
-def menor(lista_de_conferencia): # acha o menor valor da lista
-    menor = 999999999999999999*9999
-    for i in range(len(lista_de_conferencia)):
-        for j in range(len(lista_de_conferencia)):
-            if menor > lista_de_conferencia[i][j] and lista_de_conferencia[i][j] != 0:
-                menor = lista_de_conferencia[i][j]
-    return menor
-
-def diagonal(valor, n, matriz, n_na_matriz): # identifica se o valor da matriz é uma diagonal
-    verificar = False
-    for i in range(n):
-        if matriz[i][i] == valor:
-            verificar = True
-    variavel = n_na_matriz
-    for i in range(n):
-        if matriz[variavel][i] == valor:
-            verificar = True
-        variavel -= 1
-    return verificar
-        
-def verificador(lista_de_conferencia, cm, st): # verifica se as colunas e linhas tem o valor de C.matriz
-    verifica = 0
-    for i in range(len(lista_de_conferencia)):
-        somar = 0
-        for j in range(len(lista_de_conferencia)):
-            somar += lista_de_conferencia[j][i]
-        if somar != cm:
-            verifica = 1
-
-    for i in range(len(lista_de_conferencia)):
-        somar = 0
-        for j in range(len(lista_de_conferencia)):
-            somar += lista_de_conferencia[i][j]
-        if somar != cm:
-            verifica = 1
-
-    somar = 0
-    for i in range(len(lista_de_conferencia)):
-        for j in range(len(lista_de_conferencia)):
-            somar += lista_de_conferencia[j][i]
-            
-    if somar != st:
-        verifica = 1
-
-    if verifica == 1:
-        texto_verificacao['text'] = '!!ERRO!!'
-    else:
-        texto_verificacao['text'] = 'Quadrado Perfeito'
-    
-
-
-def removedor(valor, lista_de_conferencia): # remove valor da lista de conferencia
-    for i in range(len(lista_de_conferencia)):
-        for j in range(len(lista_de_conferencia)):
-            if lista_de_conferencia[i][j] == valor:
-                lista_de_conferencia[i][j] = 0
-
-quadrado = ''
-num = 5
-
-def algoritmo():
-    global quadrado
-    global num
-    n = coletar_entrada()#int(input('Digite o valor de n para a matriz: '))
+def algoritmo(n):
+    # global quadrado
+    # global num
+    # n = coletar_entrada()
+    n = int(n)
     matriz = criador_de_matriz_vazia(n) # criar matriz
     lista_de_conferencia = criador_de_matriz_de_conferencia(n) # criar lista de conferencia
     metade_matriz = int((n+1)/2) - 1 # localização da metade da matriz
@@ -107,7 +17,8 @@ def algoritmo():
     num = n
 
     if n <= 2:
-        mostrar('matriz imposivel', 1, matriz)
+        # mostrar('matriz imposivel', 1, matriz)
+        return 'matriz imposivel'
 
     elif n % 2 == 0:
 
@@ -115,7 +26,7 @@ def algoritmo():
         matriz[0][0] = 1
         matriz[n_na_matriz][0] = n
         matriz[n_na_matriz][n_na_matriz] = n**2
-        mostrar('valores fixos', 1, matriz)
+        # mostrar('valores fixos', 1, matriz)
 
         w = n_na_matriz
 
@@ -123,7 +34,7 @@ def algoritmo():
             matriz[i+1][i+1] = matriz[i][i] + n + 1
             matriz[w-1][i+1] = matriz[w][i] + n - 1
             w -= 1
-        mostrar('diagonais', 2, matriz)
+        # mostrar('diagonais', 2, matriz)
 
         if n % 4 == 0: # Matriz de ordem par com modulo 4 = 0
 
@@ -151,7 +62,7 @@ def algoritmo():
                                 matriz[n_na_matriz-i][f] = lista_de_conferencia[i][n_na_matriz-f]
                             elif (lista_de_conferencia[i][n_na_matriz-f] % 2 == 0 and i <= metade_matriz) or (lista_de_conferencia[i][n_na_matriz-f] % 2 != 0 and i > metade_matriz): 
                                 matriz[i][n_na_matriz-f] = lista_de_conferencia[i][n_na_matriz-f]
-            mostrar('preenchimento', 3, matriz)
+            # mostrar('preenchimento', 3, matriz)
 
 
         else: # Matriz de ordem par com modulo 4 = 2
@@ -188,7 +99,7 @@ def algoritmo():
                     matriz[i][metade_matriz+1] = lista_de_conferencia[n_na_matriz-i][metade_matriz]
                     matriz[i][metade_matriz] = sm - matriz[i][metade_matriz+1]
             
-            mostrar('colunas', 3, matriz)
+            # mostrar('colunas', 3, matriz)
 
             for f in range(metade_matriz): # preenchimento
                 for i in range(metade_matriz):
@@ -217,7 +128,8 @@ def algoritmo():
 
 
         
-            mostrar('preenchimento', 4, matriz)
+            # mostrar('preenchimento', 4, matriz)
+        return matriz
         verificador(matriz, cm, st)
     else: #valores impares
         z = int((n**2 + 1)/2) 
@@ -241,7 +153,7 @@ def algoritmo():
         removedor(matriz[metade_matriz][0], lista_de_conferencia)
 
         
-        mostrar('valores fixos', 1, matriz)
+        # mostrar('valores fixos', 1, matriz)
 
 
         c = int((n+1)/2)
@@ -258,7 +170,7 @@ def algoritmo():
         for i in range(n_na_matriz, metade_matriz+1, -1): #segunda diagonal
             matriz[i-1][i-1] = matriz[i][i] - n
             removedor(matriz[i-1][i-1], lista_de_conferencia)
-        mostrar('diagonal', 2, matriz)
+        # mostrar('diagonal', 2, matriz)
 
         for i in range(metade_matriz-1): #coluna central
             matriz[i+1][metade_matriz] = matriz[i][metade_matriz] - n
@@ -268,7 +180,7 @@ def algoritmo():
             matriz[i-1][metade_matriz] = matriz[i][metade_matriz] + n
             removedor(matriz[i-1][metade_matriz], lista_de_conferencia)
 
-        mostrar('coluna central', 3, matriz)
+        # mostrar('coluna central', 3, matriz)
 
         for i in range(metade_matriz-1): #linha central
             matriz[metade_matriz][i+1] = matriz[metade_matriz][i] - n
@@ -278,7 +190,7 @@ def algoritmo():
             matriz[metade_matriz][i-1] = matriz[metade_matriz][i] + n
             removedor(matriz[metade_matriz][i-1], lista_de_conferencia)
 
-        mostrar('linha central', 4, matriz)
+        # mostrar('linha central', 4, matriz)
 
         #ordem crescente    
         w=0
@@ -335,53 +247,39 @@ def algoritmo():
                 
             l1 -= 1 
             l2 += 1
-        print('preenchimento', 5, matriz)
+        # print('preenchimento', 5, matriz)
         # mostrar(matriz)
+        return matriz
         verificador(matriz, cm, st)
     quadrado = matriz
 
 
 
-janela = Tk()
 
-janela.title('Quadrados Mágicos')
-
-texto = Label(janela, text='digite o valor de "n" para o quadrado mágico:')
-texto.grid(column=0, row=0, columnspan=num-1, pady=10)
-
-valor_n = Entry(janela, width=5)
-valor_n.grid(row=0, column=num-1)
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'IGORKEVEN'
 
 
-botao = Button(janela, text='Criar Quadrado', command=algoritmo)
-botao.grid(column=0, row=1, columnspan=num, pady=10)
 
-texto_quadrado1 = Label(janela, text='')
-matriz_quadrado1 = Label(janela, text='')
-texto_quadrado1.grid(column=0, row=2, pady=5, columnspan=num)
-matriz_quadrado1.grid(column=0, row=3, pady=10)
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-texto_quadrado2 = Label(janela, text='')
-matriz_quadrado2 = Label(janela, text='')
-texto_quadrado2.grid(column=0, row=3+num, pady=5, columnspan=num)
-matriz_quadrado2.grid(column=0, row=4+num, pady=10)
 
-texto_quadrado3 = Label(janela, text='')
-matriz_quadrado3 = Label(janela, text='')
-texto_quadrado3.grid(column=0, row=4+(num*2), pady=5, columnspan=num)
-matriz_quadrado3.grid(column=0, row=5+(num*2), pady=10)
+@app.route('/quadrado', methods=['POST'])
+def quadrado():
 
-texto_quadrado4 = Label(janela, text='')
-matriz_quadrado4 = Label(janela, text='')
-texto_quadrado4.grid(column=0, row=5+(num*3), pady=5, columnspan=num)
-matriz_quadrado4.grid(column=0, row=6+(num*3), pady=10)
+    n = request.form.get('valor_n')
+    
+    quadrado = algoritmo(n)
 
-texto_quadrado5 = Label(janela, text='')
-matriz_quadrado5 = Label(janela, text='')
-texto_quadrado5.grid(column=0, row=6+(num*4), pady=5, columnspan=num)
-matriz_quadrado5.grid(column=0, row=7+(num*4), pady=10)
+    flash(quadrado)
+    return redirect('/')
 
-texto_verificacao = Label(janela, text='')
-texto_verificacao.grid(column=0, row=8+(num*5), columnspan=num)
 
-janela.mainloop()
+
+
+if __name__ in "__main__":
+    app.run(debug=True) 
+
+
