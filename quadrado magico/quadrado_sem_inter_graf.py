@@ -1,5 +1,4 @@
 from func import *
-from flask import Flask, render_template, redirect, request, flash
 
 def algoritmo(n):
     # global quadrado
@@ -14,11 +13,10 @@ def algoritmo(n):
     cm = int(((n**2 + 1)/2)*n) # Constante Magica
     st = int(((n**2+1)/2)*(n**2)) # Soma de Termos
 
-    num = n
 
     if n <= 2:
         # mostrar('matriz imposivel', 1, matriz)
-        return 'matriz imposivel'
+        print('matriz imposivel')
 
     elif n % 2 == 0:
 
@@ -128,8 +126,7 @@ def algoritmo(n):
 
 
         
-            # mostrar('preenchimento', 4, matriz)
-        return matriz
+        mostrar(matriz, n)
         verificador(matriz, cm, st)
     else: #valores impares
         z = int((n**2 + 1)/2) 
@@ -247,40 +244,7 @@ def algoritmo(n):
                 
             l1 -= 1 
             l2 += 1
-        # print('preenchimento', 5, matriz)
-        # mostrar(matriz)
-        return matriz
+        mostrar(matriz, n)
         verificador(matriz, cm, st)
-    quadrado = matriz
 
-
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'vasco'
-app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
-app.config['SESSION_COOKIE_MAX_SIZE'] = 6000
-app.config["SESSION_TYPE"] = "filesystem"
-
-
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-
-@app.route('/quadrado', methods=['POST'])
-def quadrado():
-
-    n = request.form.get('valor_n')
-    
-    quadrado = algoritmo(n)
-
-    flash(quadrado)
-    return redirect('/')
-
-
-
-
-if __name__ in "__main__":
-    app.run(debug=True) 
-
-
+algoritmo(input("valor de n:"))

@@ -1,3 +1,8 @@
+def mostrar(l, n): # visualizaçao da matriz
+    for i in range(len(l)):
+        print(l[i])
+    print()
+
 
 def criador_de_matriz_vazia(n): # criador da matriz vazia
     lista=[]

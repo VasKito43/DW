@@ -10,15 +10,27 @@
 
     <h1>Quadrado Magico</h1>
     <form action="/quadrado" id="form_quadrado" method="post">
-        <label for="valor_n">Valor de n:</label>
+        <label for="valor_n">Valor de n para o quadrado mágico:</label>
         <input type="text" name="valor_n" id="input_n" required placeholder="Digite aqui">
         <button type="submit" id="button_quadrado">CRIAR</button>
     </form>
     {% set menssagem = get_flashed_messages() %}
     {% if menssagem %}
-        <div class="flash_alerta">
-            {{menssagem[0]}}
-        </div>
+        <table id="quadrado_magico">
+
+            {% for i in range(menssagem[0]|length) %}
+                <tr>
+
+                    {% for j in range(menssagem[0]|length) %}
+                        <td>{{menssagem[0][i][j]}}</td>
+
+                    {% endfor %}
+
+                </tr>
+            {% endfor %}
+
+        </table>
 
     {% endif %}
 </body>
+

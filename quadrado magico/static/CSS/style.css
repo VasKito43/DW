@@ -1,0 +1,38 @@
+*{
+    background-color: rgb(252, 252, 252);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    margin-left: 10%;
+    font-size: 30pt;
+}
+
+form{
+    margin-left: 10%;
+    font-size: 15pt;
+}
+
+input{
+    border-radius: 7px;
+    background-color: rgb(196, 196, 196);
+}
+
+button{
+    background-color: rgb(57, 108, 167);
+    color: white;
+}
+
+table {
+    padding-top: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-spacing: 5px;
+}
+
+th, td {
+    border: 1px solid black;
+}
+
