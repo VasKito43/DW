@@ -4,31 +4,34 @@
 }
 
 h1{
-    margin-left: 10%;
+    margin-left: 5%;
     font-size: 30pt;
 }
 
 form{
-    margin-left: 10%;
+    margin-left: 5%;
     font-size: 15pt;
 }
 
 input{
     border-radius: 7px;
     background-color: rgb(196, 196, 196);
+    border: solid 2px black;
+}
+
+input::placeholder{
+    color: black;
 }
 
 button{
     background-color: rgb(57, 108, 167);
     color: white;
+    border: solid 2px black;
 }
 
 table {
     padding-top: 50px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-spacing: 5px;
 }
 
@@ -36,3 +39,37 @@ th, td {
     border: 1px solid black;
 }
 
+td {
+    border-radius: 3px;
+}
+
+
+.caixa {
+    margin-left: 5%;
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+
+    
+}
+
+.diagonal{
+    background-color: #247BA0;
+}
+
+.coluna_central{
+    background-color: #70C1B3;
+}
+.linha_central{
+    background-color: #F25F5C;
+}
+.preenchimento{
+    background-color: #FFE066;
+}
+
+#bt_cor{
+    margin-left: 5%;
+
+}

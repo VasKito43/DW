@@ -274,9 +274,10 @@ def quadrado():
     
     quadrado = algoritmo(n)
 
-    flash(quadrado)
-    return redirect('/')
+    # flash(quadrado)
+    # return redirect('/')
 
+    return render_template('index.html', quadrado=quadrado, n=int(n))
 
 
 
