@@ -257,9 +257,7 @@ def algoritmo(n):
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'vasco'
-app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
-app.config['SESSION_COOKIE_MAX_SIZE'] = 6000
-app.config["SESSION_TYPE"] = "filesystem"
+
 
 
 @app.route('/')
