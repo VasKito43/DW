@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Conversor de Moedas</title>
+        
 </head>
 <body>
-    <input type="text" list="moeda" placeholder="Moeda para converter">
-    <datalist id="moeda">
-        <option value="Real"></option>
-        <option value="Dolar"></option>
-        <option value="Euro"></option>
-    </datalist>
-    <input type="text" list="moeda" placeholder="Moeda desejada">
-    <button onclick="converter()"></button>
+    <div class="container">
+        <h1>Conversor de Moedas</h1>
+        <form id="conversor">
+            <label for="moeda-origem">Moeda de Origem:</label>
+            <select id="moeda-origem" name="moeda-origem">
+                <option value="BRL">Real</option>
+            </select> <br><br>
+            <label for="moeda-destino">Moeda de Destino:</label>
+            <select id="moeda-destino" name="moeda-destino">
+                <option value="USD">Dólar Americano</option>
+                <option value="EUR">Euro</option>
+            </select>
+            <br>
+            <br>
+            <label for="valor">Quantidade:</label>
+            <input type="number" id="valor" name="valor">
+            <br><br>
+            <button type="submit">Converter</button>
+        </form>
+        <div id="resultado">
+            <p>Resultado:</p>
+            <span id="valor-convertido"></span>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
