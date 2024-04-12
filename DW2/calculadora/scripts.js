@@ -37,7 +37,7 @@ btnDelete.addEventListener("click", () => {
 
 // Botão de igual
 btnIgual.addEventListener("click", () => {
-  executaCalculo(calculadora);
+  executaCalculo(calculadora, 1);
 });
 
 
@@ -71,17 +71,29 @@ function atualizaDisplay(calculadora, botao) {
     if (botao == "+" || botao == "-" || botao == "x" || botao == "÷"){
         bufferElemento.innerText = calculadora[0] + "  " + botao
         displayElemento.innerText = ""
-    } else {
+    } else if (botao == "="){
+        bufferElemento.innerText = ""
+        displayElemento.innerText = calculadora[0]
+    }else if (botao == "AC"){
+        bufferElemento.innerText = ""
+        displayElemento.innerText = ""
+    }else if (botao == "DEL"){
+        displayElemento.innerText = calculadora[1]
+    }else {
         displayElemento.innerText += botao
        
-        // console.log(calculadora[0])
     }
 }
 
 /* Limpa os atributos do objeto calculadora e atualiza o display.
  * Para atualizar o dispay, chame a função responsável por isso.
  */
-function limpaVariaveis(calculadora) {}
+function limpaVariaveis(calculadora) {
+    calculadora[0] = undefined
+    calculadora[1] = undefined
+
+    atualizaDisplay(calculadora, "AC")
+}
 
 /* Função chamada quando um botão de número é pressionado
  * A função recebe o objeto calculadora e o número a ser exibido no display.
@@ -98,12 +110,6 @@ function adicionaNumero(calculadora, numero) {
     } else{
         calculadora[1] += numero
     }
-
-    
-    console.log(calculadora[0])
-    console.log(calculadora[1])
-    console.log(calculadora[2])
-    // console.log(eval(calculadora[0] + calculadora[2] + calculadora[1]))
 
     atualizaDisplay(calculadora, numero)
     
@@ -125,12 +131,9 @@ function escolheOperador(calculadora, operador) {
     }
     if (calculadora[1] !== undefined || calculadora[0] !== undefined){
 
-        executaCalculo(calculadora)
+        executaCalculo(calculadora, 0)
     }
     calculadora[2] = operador
-    // console.log(calculadora[2])
-    // calculadora[0] = calculadora[1]
-    // calculadora[1] = undefined
     atualizaDisplay(calculadora, operador)
 
 }
@@ -142,7 +145,7 @@ function escolheOperador(calculadora, operador) {
  * - Atualizar os atributos operador, operandoAnterior e operandoAtual
  * - Atualizar o display
  */
-function executaCalculo(calculadora) {
+function executaCalculo(calculadora, numero) {
     if (calculadora[0] === undefined && (calculadora[2] === "÷" || calculadora[2] === "x")){
         calculadora[0] = "1"
     } else if (calculadora[1] === undefined && (calculadora[2] === "÷" || calculadora[2] === "x")){
@@ -159,25 +162,28 @@ function executaCalculo(calculadora) {
     } else if (calculadora[2] === "x"){
         calculadora[2] = "*"
     }
-    calculadora[0] = String(eval(calculadora[0] + calculadora[2] + calculadora[1]))
-    calculadora[1] =  undefined
-    console.log(calculadora[0])
-    // if (calculadora[2] === "+"){
-    //     calculadora[0] = String(parseFloat(calculadora[0]) + parseFloat(calculadora[1]))
-    //     calculadora[1] = undefined
-    // } else if (calculadora[2] === "-"){
-    //     calculadora[0] = String(parseFloat(calculadora[0]) - parseFloat(calculadora[1]))
-    //     calculadora[1] = undefined
-    // } else if (calculadora[2] === "x"){
-    //     calculadora[0] = String(parseFloat(calculadora[0]) * parseFloat(calculadora[1]))
-    //     calculadora[1] = undefined
-    // } else if (calculadora[2] === "÷"){
-    //     calculadora[0] = String(parseFloat(calculadora[0]) / parseFloat(calculadora[1]))
-    //     calculadora[1] = undefined
-    // }
+
+    if (numero === 1){
+        calculadora[0] = String(eval(calculadora[0] + calculadora[2] + calculadora[1]))
+        calculadora[1] =  undefined
+        atualizaDisplay(calculadora, "=")
+    } else {
+        calculadora[0] = String(eval(calculadora[0] + calculadora[2] + calculadora[1]))
+        calculadora[1] =  undefined
+    }
+    
+    if (calculadora[2] === "/"){
+        calculadora[2] = "÷"
+    } else if (calculadora[2] === "*"){
+        calculadora[2] = "x"
+    }
+   
 }
 
 /* Função chamada quando o botão delete for pressionado
  * Apaga o último dígito digitado no
  */
-function apagaDigito(calculadora) {}
+function apagaDigito(calculadora) {
+    calculadora[1] = calculadora[1].slice(0, -1)
+    atualizaDisplay(calculadora, "DEL")
+}

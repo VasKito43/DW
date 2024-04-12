@@ -23,7 +23,7 @@ def login():
     
     else:
         flash('usuario invalido')
-        return redirect('/')
+        return redirect('/login')
 
 
 
